@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakuvi | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0a0a0a] text-white overflow-hidden">
+
+    <div id="custom-cursor" class="hidden md:block"></div>
+
+    <div id="loader" class="fixed inset-0 z-[1000] bg-[#0a0a0a] flex flex-col items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none pointer-events-none">
+        <h2 class="text-[30vw] font-syne font-bold uppercase">Bakuvi</h2>
+    </div>
+
+    <div class="relative z-10 text-center">
+        <div class="overflow-hidden mb-2">
+            <h1 class="loader-title text-4xl md:text-6xl font-syne font-bold uppercase tracking-tighter text-white">
+                Bakuvi.Design
+            </h1>
+        </div>
+        <div class="flex items-center justify-center gap-4">
+            <div id="loader-percentage" class="text-6xl md:text-8xl font-syne font-light text-white italic">00</div>
+            <div class="h-12 w-[1px] bg-white/20"></div>
+            <div class="text-left text-[10px] uppercase tracking-[0.3em] text-gray-500 leading-tight">
+                Creativity<br>Loading
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-20 left-1/2 -translate-x-1/2 w-40 h-[1px] bg-white/10">
+        <div id="loader-progress" class="h-full bg-white w-0 transition-all duration-300"></div>
+    </div>
+</div>
+
+    <nav class="fixed top-0 w-full z-50 p-8 flex justify-between items-center">
+    <div class="nav-logo text-2xl font-syne font-bold uppercase tracking-tighter">B.</div>
+    
+    <div class="flex items-center gap-8">
+        <div class="nav-links hidden md:flex space-x-8 text-[10px] uppercase tracking-widest font-medium">
+            <a href="#about" data-az="Haqqımda" data-en="About">Haqqımda</a>
+            <a href="#experience" data-az="Təcrübə" data-en="Experience">Təcrübə</a>
+            <a href="#gallery" data-az="Portfolio" data-en="Work">Portfolio</a>
+            <a href="#contact" data-az="Əlaqə" data-en="Contact">Əlaqə</a>
+        </div>
+        
+        <div class="flex gap-2 text-[10px] font-bold border border-white/10 rounded-full px-3 py-1 bg-black/20 backdrop-blur-md">
+            <button onclick="changeLang('az')" class="lang-btn opacity-100" id="btn-az">AZ</button>
+            <span class="opacity-20">|</span>
+            <button onclick="changeLang('en')" class="lang-btn opacity-40" id="btn-en">EN</button>
+        </div>
+    </div>
+</nav>
+
+<section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale">
+        <source src="assets/videos/IMG_7458.MP4" type="video/mp4">
+    </video>
+    <div class="relative z-10 text-center px-4 reveal">
+        <p class="text-[10px] uppercase tracking-[0.8em] mb-6 opacity-60" data-az="Sistem Arxitekturası & Dizayn" data-en="System Architecture & Design">Sistem Arxitekturası & Dizayn</p>
+        <h2 class="text-[7vw] font-syne uppercase font-extrabold leading-[0.9] tracking-tighter" 
+            data-az="Kodla Yazılan <br> Yaradıcılıq" 
+            data-en="Creativity <br> Written in Code">
+            Kodla Yazılan <br> Yaradıcılıq
+        </h2>
+    </div>
+</section>
+
+        <section id="about" class="relative min-h-screen py-32 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between overflow-hidden">
+    <div class="md:w-1/2 mb-20 md:mb-0 reveal">
+        <h3 class="text-5xl md:text-7xl font-syne font-bold leading-tight uppercase">
+            Azer Dadashev <br> <span class="opacity-20 italic font-light tracking-tighter">Innovator</span>
+        </h3>
+        <p class="mt-8 max-w-md opacity-70 leading-relaxed text-sm" 
+           data-az="Qərbi Kaspi Universitetində İT mütəxəssis və müstəqil proqram təminatı tərtibatçısı olaraq, mən mürəkkəb sistemləri estetik həllərlə birləşdirirəm. Kodun funksionallığı qədər, istifadəçi təcrübəsinin də mükəmməlliyinə inanıram."
+           data-en="As an IT specialist at Western Caspian University and an independent software developer, I merge complex systems with aesthetic solutions. I believe in the perfection of user experience as much as the functionality of code.">
+           Qərbi Kaspi Universitetində İT mütəxəssis və müstəqil proqram təminatı tərtibatçısı olaraq, mən mürəkkəb sistemləri estetik həllərlə birləşdirirəm.
+        </p>
+        </div>
+
+    <div class="md:w-1/2 flex justify-center relative">
+        <div class="card-container">
+            <div class="flip-card-inner">
+                <div class="card-front bg-zinc-900">
+                    <img src="assets/images/photo_2026-01-21_00-20-42.jpg" class="w-full h-full object-cover rounded-[2rem]">
+                </div>
+                <div class="card-back bg-zinc-800">
+                    <img src="assets/images/photo_2026-01-21_00-20-49.jpg" class="w-full h-full object-cover rounded-[2rem]">
+                </div>
+            </div>
+        </div>
+
+        <div class="shaking-hand-wrap absolute -bottom-10 -right-10 md:-right-20">
+            <div class="hand-icon text-7xl md:text-9xl">👋</div>
+        </div>
+    </div>
+</section>
+<div class="noise-overlay"></div>
+
+<section id="experience" class="py-32 px-6 md:px-20 relative border-b border-white/5">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-[10px] uppercase tracking-[0.5em] mb-20 opacity-40 reveal" data-az="Yolçuluq / Təcrübə" data-en="Journey / Experience">Yolçuluq / Təcrübə</h2>
+        
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <span class="text-[10px] opacity-40 uppercase tracking-widest">2023 — Present</span>
+                    <h4 class="text-xl font-syne font-bold mt-2">IT Specialist & Infrastructure</h4>
+                    <p class="text-xs text-zinc-400 mt-1">Western Caspian University</p>
+                    <p class="mt-4 text-sm opacity-60 leading-relaxed" 
+                       data-az="Universitetin rəqəmsal infrastrukturunun modernləşdirilməsi, şəbəkə təhlükəsizliyi və daxili İT həllərin optimallaşdırılması."
+                       data-en="Modernizing university digital infrastructure, ensuring network security, and optimizing internal IT solutions.">
+                       Universitetin rəqəmsal infrastrukturunun modernləşdirilməsi, şəbəkə təhlükəsizliyi və daxili İT həllərin optimallaşdırılması.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="w-[45%] hidden md:block"></div>
+            </div>
+
+            <div class="timeline-item reveal flex-row-reverse">
+                <div class="timeline-content">
+                    <span class="text-[10px] opacity-40 uppercase tracking-widest">2021 — 2023</span>
+                    <h4 class="text-xl font-syne font-bold mt-2">Full-Stack Development</h4>
+                    <p class="text-xs text-zinc-400 mt-1">Independent Projects</p>
+                    <p class="mt-4 text-sm opacity-60 leading-relaxed text-right md:text-left" 
+                       data-az="Mürəkkəb alqoritmlər və istifadəçi mərkəzli interfeyslərin qurulması. Backend və Frontend sintezi ilə miqyaslana bilən layihələr."
+                       data-en="Building complex algorithms and user-centric interfaces. Scalable projects through the synthesis of Backend and Frontend.">
+                       Mürəkkəb alqoritmlər və istifadəçi mərkəzli interfeyslərin qurulması.
+                    </p>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="w-[45%] hidden md:block"></div>
+            </div>
+        </div>
+    </div>
+</section>
+        <section id="gallery" class="py-20 px-6 md:px-20">
+            <div class="bento-grid">
+                <div class="bento-item item-1 reveal">
+                    <img src="assets/images/IMG_5660.PNG" alt="Gallery 1">
+                    <div class="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md px-4 py-1 rounded-full text-[10px] uppercase">Bakuvi Studio</div>
+                </div>
+                <div class="bento-item item-2 reveal">
+                    <img src="assets/images/IMG_8832.JPG" alt="Gallery 2">
+                </div>
+                <div class="bento-item item-3 reveal p-8 flex flex-col justify-end bento-card-dynamic">
+    <h4 class="text-2xl font-syne uppercase">Creative Mind</h4>
+    <p class="text-xs opacity-50 mt-2">Dizayn hər yerdədir.</p>
+    </div>
+                
+                <div class="bento-item item-4 reveal">
+                    <img src="assets/images/photo_2026-01-21_00-20-53.jpg" alt="Gallery 4">
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="py-32 px-6 md:px-20 relative overflow-hidden">
+    <div class="flex justify-between items-end mb-20 reveal">
+        <div>
+            <h2 class="text-xs uppercase tracking-widest opacity-40 mb-4" data-az="Düşüncələr" data-en="Thoughts">Düşüncələr</h2>
+            <h3 class="text-4xl md:text-6xl font-syne font-bold uppercase" data-az="İT Journal" data-en="IT Journal">İT Journal</h3>
+        </div>
+        <div class="text-[10px] uppercase tracking-widest opacity-30 hidden md:block">Selected Articles / 2026</div>
+    </div>
+
+    <div class="blog-list border-t border-white/10">
+        <div class="blog-item py-12 flex justify-between items-center group border-b border-white/10 cursor-pointer" data-img="assets/images/tech-1.jpg">
+            <div class="flex items-center gap-6 md:gap-16">
+                <span class="text-sm opacity-20 font-syne">01</span>
+                <div>
+                    <h3 class="text-2xl md:text-5xl font-syne uppercase group-hover:translate-x-4 transition-transform duration-500" 
+                        data-az="Süni İntellekt və Kod Estetikası" 
+                        data-en="AI and Code Aesthetics">Süni İntellekt və Kod Estetikası</h3>
+                    <div class="flex gap-4 mt-2">
+                        <span class="text-[9px] uppercase tracking-widest px-2 py-1 bg-white/5 rounded">Architecture</span>
+                        <span class="text-[9px] uppercase tracking-widest px-2 py-1 bg-white/5 rounded">Future</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block text-right">
+                <div class="text-xs font-medium uppercase tracking-widest italic group-hover:opacity-100 opacity-0 transition-opacity">Read Article —></div>
+            </div>
+        </div>
+
+        <div class="blog-item py-12 flex justify-between items-center group border-b border-white/10 cursor-pointer" data-img="assets/images/tech-2.jpg">
+            <div class="flex items-center gap-6 md:gap-16">
+                <span class="text-sm opacity-20 font-syne">02</span>
+                <div>
+                    <h3 class="text-2xl md:text-5xl font-syne uppercase group-hover:translate-x-4 transition-transform duration-500" 
+                        data-az="Universitet İnfrastrukturunda Rəqəmsal Transformasiya" 
+                        data-en="Digital Transformation in University Infra">Rəqəmsal Transformasiya</h3>
+                    <div class="flex gap-4 mt-2">
+                        <span class="text-[9px] uppercase tracking-widest px-2 py-1 bg-white/5 rounded">Cybersecurity</span>
+                        <span class="text-[9px] uppercase tracking-widest px-2 py-1 bg-white/5 rounded">System</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block text-right">
+                <div class="text-xs font-medium uppercase tracking-widest italic group-hover:opacity-100 opacity-0 transition-opacity">Explore —></div>
+            </div>
+        </div>
+    </div>
+    
+    <img src="" alt="Preview" class="blog-nav-img pointer-events-none shadow-2xl rounded-xl z-50">
+</section>
+
+        <section class="py-20 px-6 md:px-20">
+            <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-[1000px] md:h-[600px]">
+                <div class="md:col-span-2 md:row-span-2 bg-zinc-900 rounded-3xl overflow-hidden reveal shadow-xl">
+                    <img src="assets/images/photo_2026-01-21_00-28-38.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Me">
+                </div>
+                <div class="md:col-span-2 bg-zinc-800 rounded-3xl overflow-hidden reveal shadow-xl">
+                    <img src="assets/images/photo_2026-01-21_00-20-55.jpg" class="w-full h-full object-cover" alt="Work">
+                </div>
+                <div class="bg-zinc-800 rounded-3xl overflow-hidden reveal shadow-xl">
+                    <img src="assets/images/photo_2026-01-21_00-28-39.jpg" class="w-full h-full object-cover" alt="Life">
+                </div>
+                <div class="bg-white text-black p-8 rounded-3xl flex flex-col justify-between reveal shadow-xl">
+                    <h4 class="text-2xl font-syne font-bold uppercase">Minimalist Lifestyle</h4>
+                    <p class="text-sm">Hər kadr bir hekayədir.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+<section id="contact" class="py-32 px-6 md:px-20 min-h-screen relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-xs uppercase tracking-[0.5em] mb-16 opacity-50 reveal">Contact / Connection</h2>
+        
+        <div class="flex flex-col lg:flex-row gap-16">
+            <div class="lg:w-2/5 flex flex-col gap-8 reveal">
+                <div class="contact-photo-wrapper relative overflow-hidden rounded-[2rem] h-[400px]">
+                    <img src="assets/images/photo_2026-01-21_00-28-38.jpg" alt="Azar" class="w-full h-full object-cover grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105">
+                </div>
+
+                <div class="grid grid-cols-4 gap-3">
+                    <a href="https://instagram.com" class="social-box ig" title="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://wa.me/994775880724" class="social-box wa" title="WhatsApp">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    </a>
+                    <a href="https://facebook.com" class="social-box fb" title="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" class="social-box ln" title="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://youtube.com" class="social-box yt" title="YouTube">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
+                    <a href="https://t.me" class="social-box tg" title="Telegram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.462 15.998c-.2.35-.9.9-1.2 1.1-.3.2-1.5 1.1-2.4 1.1-.9 0-1.3-.3-1.8-.7s-1.4-1.4-1.9-2.1c-.5-.7-.8-1.2-1.2-1.2s-.5.3-.8.6c-.3.3-.8.9-1.1 1.1s-.4.3-.7.3-.8-.3-1.1-.6c-.3-.3-.4-.5-.4-.5s.5-1.2.7-1.5c.2-.3.4-.6.4-.6s-.2-.3-.5-.7c-.3-.4-.8-1.1-.9-1.4s-.1-.6 0-.8c.1-.2.4-.4.4-.4s.2-.1.3-.1c.1 0 .2.1.2.2.1.1.2.4.4.8s.4.7.4.7.2-.6.2-1c0-.4-.1-.8-.1-.8s.2-.1.5 0c.3.1.6.3.6.3s.1.4.1.8c0 .4-.2 1.1-.2 1.1s.3.1.5.1c.2 0 .5-.2.5-.2s.1-.5.1-1.1c0-.6-.1-.8-.1-.8s.4 0 .7.3c.3.3.5.8.5.8s.1 1.1-.1 1.5c0 .3-.1.4-.1.4s.2.1.4.1.4-.2.4-.2.2-.6.3-1.2c.1-.6.1-.9.1-.9s.3.1.5.4c.2.3.3.6.3.6s.1 1.3-.2 1.9z"/></svg>
+                    </a>
+                    <a href="https://threads.net" class="social-box th" title="Threads">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.586 2.344A12.227 12.227 0 0 0 2.23 14.14c.143 2.502.83 4.67 2.138 6.505C6.012 22.99 8.653 24 12 24c3.483 0 6.136-1.047 7.886-3.111 1.637-1.933 2.385-4.576 2.385-7.411 0-3.355-1.066-5.96-3.17-7.747C17.33 4.14 14.808 3.324 12 3.324c-2.146 0-3.957.51-5.385 1.517-1.115.786-1.897 1.83-2.324 3.107-.468 1.4-.388 2.87.234 4.14.484.987 1.34 1.764 2.544 2.31 1.57.712 3.636.96 6.14.737.525-.046 1.05-.116 1.574-.21a3.67 3.67 0 0 1-1.893 2.106c-.53.253-1.12.38-1.754.38-1.55 0-2.834-.698-3.323-2.22a5.578 5.578 0 0 1-.16-.83l-3.23.27a8.55 8.55 0 0 0 .5 2.11c1.076 3.333 4.162 4.197 6.304 4.197 1.455 0 2.748-.38 3.843-1.13a7.126 7.126 0 0 0 2.81-3.66c.148-.48.26-.976.335-1.488a18.3 18.3 0 0 0 .153-2.435c0-1.846-.46-3.567-1.373-4.832-1.1-1.523-2.903-2.3-5.35-2.3-2.132 0-3.832.618-5.053 1.838-1.082 1.082-1.63 2.502-1.63 4.214 0 2.316 1.05 4.142 3.125 5.42 1.62.998 3.812 1.353 6.516 1.054a16.4 16.4 0 0 0 1.574-.21l.36 3.195c-.684.078-1.375.14-2.072.186-3.29.215-5.968-.21-7.962-1.267C2.793 14.545 1.5 12.062 1.5 8.875c0-2.454.85-4.524 2.527-6.155C5.74.987 8.524 0 12.315 0c3.763 0 6.64.93 8.554 2.766 1.77 1.7 2.631 4.1 2.631 7.135 0 3.25-.865 6.136-2.571 8.577C18.98 21.246 16.035 22.5 12 22.5c-4.135 0-7.382-1.28-9.39-3.705-1.64-1.98-2.5-4.38-2.553-7.14L3.25 11.53c.04 1.954.61 3.654 1.702 4.936C6.3 18.118 8.65 19.125 12 19.125c3.045 0 5.234-1 6.507-2.972.76-1.177 1.157-2.613 1.183-4.267h-3.414c-.023.754-.15 1.46-.38 2.11a3.67 3.67 0 0 1-2.11 2.11c-.53.253-1.12.38-1.754.38-1.55 0-2.834-.698-3.323-2.22-.054-.167-.1-.345-.138-.53l-3.23.27a8.55 8.55 0 0 0 .5 2.11c1.076 3.333 4.162 4.197 6.304 4.197 1.455 0 2.748-.38 3.843-1.13a7.126 7.126 0 0 0 2.81-3.66c.148-.48.26-.976.335-1.488a18.3 18.3 0 0 0 .153-2.435c0-1.846-.46-3.567-1.373-4.832-1.1-1.523-2.903-2.3-5.35-2.3-2.132 0-3.832.618-5.053 1.838-1.082 1.082-1.63 2.502-1.63 4.214 0 2.316 1.05 4.142 3.125 5.42 1.62.998 3.812 1.353 6.516 1.054a16.4 16.4 0 0 0 1.574-.21l.36 3.195c-.684.078-1.375.14-2.072.186-3.29.215-5.968-.21-7.962-1.267C2.793 14.545 1.5 12.062 1.5 8.875c0-2.454.85-4.524 2.527-6.155C5.74.987 8.524 0 12.315 0c3.763 0 6.64.93 8.554 2.766 1.77 1.7 2.631 4.1 2.631 7.135 0 3.25-.865 6.136-2.571 8.577C18.98 21.246 16.035 22.5 12 22.5z"/></svg>
+                    </a>
+                    <a href="mailto:dadasevazer@gmail.com" class="social-box gm" title="Gmail">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.634-1.634 1.634h-2.101V10.85L12 15.015 3.735 10.85v10.15H1.634A1.634 1.634 0 0 1 0 19.366V5.457c0-1.323 1.513-2.04 2.503-1.231L12 11.248l9.497-7.022c.99-.809 2.503-.092 2.503 1.231z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:w-3/5 reveal">
+                <form id="contact-form" action="https://formspree.io/f/xzddjbpr" method="POST" class="dynamic-form">
+                    <div class="mb-12">
+                        <h3 class="text-4xl md:text-6xl font-syne font-bold uppercase leading-tight mb-4">
+                            Need a <br> <span class="italic text-transparent outline-text">Creative</span> Hand?
+                        </h3>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Ad Soyad</label>
+                            <input type="text" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label>E-poçt</label>
+                            <input type="email" name="email" placeholder="example@mail.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Nömrə</label>
+                            <input type="tel" name="phone" placeholder="+994 -- --- -- --">
+                        </div>
+                        <div class="input-group">
+                            <label>Xidmət növü</label>
+                            <select name="need" class="dropdown-premium">
+                                <option value="" disabled selected>Seçin...</option>
+                                <option value="ui-ux">UI/UX Design</option>
+                                <option value="branding">Visual Branding</option>
+                                <option value="architecture">Architecture</option>
+                                <option value="consultation">Consultation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Sizə necə kömək edə bilərəm?</label>
+                        <textarea name="message" rows="4" placeholder="Layihə haqqında qısa məlumat..."></textarea>
+                    </div>
+
+                    <button type="submit" class="premium-btn" id="submit-btn">
+    <span>Send Message</span>
+    <div class="arrow-wrap">
+        <svg class="icon-arrow w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        <svg class="icon-plane w-4 h-4" fill="currentColor" viewBox="0 0 24 24" style="display: none;"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.327-7.215-2.227 24-11.627zm-15 16.14v4.86l3.812-3.393-3.812-1.467z"/></svg>
+    </div>
+</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="relative py-20 border-t border-white/5 px-6 md:px-20 bg-transparent overflow-hidden">
+    <div class="absolute left-0 bottom-0 text-[15vw] font-syne font-bold opacity-[0.02] select-none pointer-events-none translate-y-1/2">
+        BAKUVI
+    </div>
+
+    <div class="max-w-7xl mx-auto flex flex-col gap-12 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div class="flex flex-col gap-4">
+                <h4 class="text-xl font-syne font-bold uppercase tracking-tighter">Bakuvi.Design</h4>
+                <p class="text-[10px] tracking-[0.2em] uppercase opacity-40 max-w-[200px]">
+                    Dizayn estetikadan daha çox, bir həll yoludur.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center">
+                <div class="flex flex-col gap-2">
+                    <span class="text-[8px] uppercase tracking-[0.3em] opacity-30">Phone</span>
+                    <a href="tel:+994775880724" class="footer-link text-xs tracking-widest">+994 77 588 07 24</a>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <span class="text-[8px] uppercase tracking-[0.3em] opacity-30">Email</span>
+                    <a href="mailto:dadasevazer@gmail.com" class="footer-link text-xs tracking-widest underline underline-offset-8">dadasevazer@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-[9px] tracking-[0.3em] uppercase opacity-40">
+                © 2026 Azar Bakuvi. All rights reserved.
+            </div>
+            
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="back-to-top group">
+                <span class="text-[9px] tracking-[0.3em] uppercase opacity-40 group-hover:opacity-100 transition">Back to Top</span>
+                <div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                </div>
+            </button>
+        </div>
+    </div>
+</footer>
+    <div class="fixed bottom-10 right-10 z-[100]">
+        <div id="theme-btn" class="w-14 h-7 bg-zinc-800 rounded-full p-1 cursor-pointer flex items-center transition-all duration-500 border border-zinc-700">
+            <div id="toggle-circle" class="w-5 h-5 bg-white rounded-full transition-transform duration-500 shadow-lg"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

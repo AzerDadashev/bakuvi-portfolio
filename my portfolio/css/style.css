@@ -1,0 +1,488 @@
+:root {
+    --bg: #0a0a0a;
+    --text: #ffffff;
+    --card-bg: #111;
+}
+
+body {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.light-mode {
+    --bg: #ffffff;
+    --text: #0a0a0a;
+    --card-bg: #f4f4f5;
+}
+
+/* Custom Cursor */
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-difference: difference;
+    transition: transform 0.1s ease;
+}
+
+/* Header Fixes */
+nav a {
+    color: var(--text) !important;
+    transition: opacity 0.3s ease;
+}
+
+.nav-logo {
+    color: var(--text) !important;
+}
+
+/* Perfect Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 320px);
+    gap: 20px;
+}
+
+.bento-card-dynamic {
+    background-color: var(--card-bg) !important;
+    color: var(--card-text) !important;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.bento-item {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.bento-item:hover img { transform: scale(1.08); }
+
+.item-1 { grid-column: span 2; grid-row: span 2; }
+.item-2 { grid-column: span 1; grid-row: span 2; }
+.item-3 { grid-column: span 1; grid-row: span 1; }
+.item-4 { grid-column: span 1; grid-row: span 1; }
+
+@media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .item-1, .item-2 { grid-column: span 1; height: 400px; }
+}
+
+/* Loading & Flip Card */
+.line-child { transform: translateY(110%); display: inline-block; }
+.card-container { perspective: 2000px; width: 320px; height: 480px; z-index: 20; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; will-change: transform; }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+.card-back { transform: rotateY(180deg); }
+
+/* Blog Nav Image */
+.blog-nav-img {
+    position: fixed;
+    width: 350px;
+    height: 220px;
+    object-cover: center;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
+}
+
+.blog-item:hover ~ .blog-nav-img, 
+.blog-item:hover .blog-nav-img {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Theme Button Adjustments */
+body.light-mode #toggle-circle { transform: translateX(28px); background: #000; }
+body.light-mode #theme-btn { background: #e4e4e7; border-color: #d4d4d8; }
+body.light-mode .blog-item { border-color: rgba(0,0,0,0.1); }
+
+#theme-btn {
+    z-index: 999; /* Həmişə ən üstdə */
+    bottom: 30px;
+    right: 30px;
+    position: fixed;
+}
+
+/* Premium Form Styles */
+.dynamic-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.4;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 1rem 0;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.4s ease;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    border-color: var(--text);
+}
+
+/* outline-text effekt */
+.outline-text {
+    -webkit-text-stroke: 1px var(--text);
+    opacity: 0.7;
+}
+
+/* Premium Button */
+.premium-btn {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--text);
+    color: var(--bg);
+    padding: 0.8rem 0.8rem 0.8rem 2rem;
+    border-radius: 100px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.premium-btn:hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+.arrow-wrap {
+    background: var(--bg);
+    color: var(--text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Social Box - Xüsusi Hover */
+.social-box {
+    aspect-ratio: 1/1;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    transition: all 0.4s ease;
+}
+
+.social-box:hover {
+    background: var(--text);
+    color: var(--bg);
+    transform: translateY(-5px);
+    border-color: var(--text);
+}
+
+/* White Theme Düzəlişləri */
+body.light-mode .input-group input,
+body.light-mode .input-group select,
+body.light-mode .input-group textarea {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .footer-link {
+    color: #000;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+
+/* Dropdown Düzəlişi (White mode-da oxunmayan hissə) */
+.dropdown-premium {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+/* Ağ modda dropdown daxili seçimlərin rəngi */
+body.light-mode .dropdown-premium option {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Qara modda dropdown daxili seçimlərin rəngi */
+body:not(.light-mode) .dropdown-premium option {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* Sosial Şəbəkələrin Brend Rəngləri */
+.social-box:hover.ig { background: #E1306C; color: white; border-color: #E1306C; }
+.social-box:hover.wa { background: #25D366; color: white; border-color: #25D366; }
+.social-box:hover.fb { background: #1877F2; color: white; border-color: #1877F2; }
+.social-box:hover.ln { background: #0077B5; color: white; border-color: #0077B5; }
+.social-box:hover.yt { background: #FF0000; color: white; border-color: #FF0000; }
+.social-box:hover.tg { background: #0088CC; color: white; border-color: #0088CC; }
+.social-box:hover.th { background: #000000; color: white; border-color: #000000; }
+.social-box:hover.gm { background: #DB4437; color: white; border-color: #DB4437; }
+
+/* White mode-da Threads (th) ağ modda qara, qara modda ağ olmalıdır */
+body.light-mode .social-box:hover.th { background: #000; color: #fff; }
+body:not(.light-mode) .social-box:hover.th { background: #fff; color: #000; border-color: #fff; }
+
+/* Sosial ikonların hover hərəkəti */
+.social-box {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.arrow-wrap {
+    position: relative;
+    overflow: hidden; /* Uçan təyyarə kənara çıxanda görünsün deyə sonra dəyişə bilərik */
+}
+
+/* Uçuş Animasiyası */
+@keyframes planeFly {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    20% { transform: translate(-2px, 2px) scale(0.9); }
+    100% { transform: translate(40px, -40px) scale(1.2); opacity: 0; }
+}
+
+.sending .icon-arrow {
+    display: none;
+}
+
+.sending .icon-plane {
+    display: block !important;
+    animation: planeFly 0.8s forwards cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+/* Düymənin uğurlu göndərilmə halı */
+.success-send {
+    background: #25D366 !important; /* Yaşıl rəng */
+    border-color: #25D366 !important;
+}
+
+
+/* Sayğacların stili */
+.counter-num::after {
+    content: '+';
+    font-size: 20px;
+    margin-left: 2px;
+    color: var(--text);
+}
+
+/* Əl Animasiyası (Shake & Float) */
+.shaking-hand-wrap {
+    animation: floating 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hand-icon {
+    display: inline-block;
+    animation: wave-hand 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave-hand {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* Shake efekti başlanğıcı */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Dayanıqlıq */
+  100% { transform: rotate( 0.0deg) }
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* White Mode uyğunluğu */
+body.light-mode .counter-num {
+    color: #000;
+}
+
+
+#loader {
+    transition: transform 1s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+/* Yuxarı sürüşərək yox olma effekti */
+#loader.loaded {
+    transform: translateY(-100%);
+}
+
+.loader-title {
+    animation: text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes text-reveal {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Faiz rəqəminin parlaması */
+#loader-percentage {
+    font-variant-numeric: tabular-nums; /* Rəqəmlərin titrəməməsi üçün */
+    text-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* Footer Link Effektləri */
+.footer-link {
+    color: var(--text);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 1;
+    letter-spacing: 1px;
+}
+
+/* Back to Top Düyməsi */
+.back-to-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    /* Switcher düyməsi sağdadırsa, bu düyməni sola çəkirik və ya padding veririk */
+    margin-right: 80px; 
+}
+
+/* Switcher üçün xüsusi boşluq (Mobil üçün) */
+@media (max-width: 768px) {
+    .back-to-top {
+        margin-right: 0;
+        margin-bottom: 60px; /* Switcher-in üstünə minməsin */
+    }
+}
+
+/* White Mode Uyğunluğu */
+body.light-mode footer {
+    background-color: #fcfcfc;
+    border-color: rgba(0,0,0,0.05);
+}
+
+body.light-mode .back-to-top div {
+    border-color: rgba(0,0,0,0.1);
+}
+
+body.light-mode .back-to-top div:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* Noise Grain Effect */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none; /* Saytda klikləməyə mane olmasın */
+    opacity: 0.04; /* Çox xəfif olsun */
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    filter: contrast(150%) brightness(100%);
+}
+
+/* Timeline Stili */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: rgba(128, 128, 128, 0.2);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.timeline-content {
+    width: 45%;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--text);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: var(--text);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .timeline-line { left: 20px; }
+    .timeline-item { flex-direction: column; align-items: flex-start; }
+    .timeline-content { width: calc(100% - 50px); margin-left: 50px; }
+    .timeline-dot { left: 20px; }
+}
