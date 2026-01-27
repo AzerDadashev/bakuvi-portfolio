@@ -644,53 +644,72 @@ body #hero {
     transition: all 1.5s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
+/* Hero içindəki yazıları theme-dən müstəqil edirik */
+#hero .hero-subtitle, 
+#hero .hero-title,
+#hero p, 
+#hero h2 {
+    color: #ffffff !important; /* Həmişə ağ rəng */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Yazının video üzərində daha net oxunması üçün xəfif kölgə */
+}
+
+/* Əgər data-az/data-en istifadə edirsənsə və JS ilə dəyişirsənsə, 
+   bu selektor hər şeyi sığortalayır */
+#hero * {
+    --text: #ffffff !important;
+}
+
+
+/* Navbar-ın default (Dark/Normal) halı */
+nav {
+    background: rgba(10, 10, 10, 0.4) !important; /* Çox xəfif tünd glass */
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+/* YALNIZ Light Mode aktiv olanda Navbar-ın dəyişimi */
+body.light-mode nav {
+    background: rgba(255, 255, 255, 0.65) !important; /* Ağ glass effekti */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Light Mode-da Nav daxilindəki yazıları qaraldırıq */
+body.light-mode nav .nav-logo a,
+body.light-mode nav .nav-links a,
+body.light-mode nav .lang-btn {
+    color: #0a0a0a !important;
+}
+
+/* Burger menyunun xətləri Light Mode-da qaralmalıdır */
+body.light-mode #menu-toggle span {
+    background-color: #0a0a0a !important;
+}
+
+/* Mobile Menu-nu sığortalayaq (Yazılar ağ qalsın deyə) */
+#mobile-menu {
+    background-color: #0a0a0a;
+}
+#mobile-menu a {
+    color: #ffffff !important; /* Menyudakı yazılar həmişə ağ qalsın, çünki menyu arxası qaradır */
+}
+
+
+@media (max-width: 768px) {
+    /* Videonu Navbar-ın altından xəfifcə aşağı sürüşdürürük */
+    #hero .video-container {
+        margin-top: 20px; 
+    }
+}
+
+
 body.animation-start #hero {
     opacity: 1;
     filter: blur(0px);
     transform: scale(1);
 }
 
-
-/* Hero Video üçün xüsusi tənzimləmə */
-.hero-video {
-    /* Mobildə videonun mərkəzləşdirilməsi */
-    object-position: center center;
-}
-
-/* Hero Başlığı üçün responsiv limitlər */
-.hero-title {
-    /* Çox böyük ekranlarda hərfin aşırı böyüməməsi üçün limit */
-    max-font-size: 180px;
-    min-font-size: 42px;
-}
-
-@media (max-width: 768px) {
-    #hero {
-        /* Mobildə hündürlüyü 100vh yerinə 100dvh (dynamic view height) etmək 
-           brauzer panellərinin (safari/chrome) problem yaratmasının qarşısını alır */
-        height: 100dvh;
-    }
-    
-    .hero-title {
-        /* Mobildə sətir arasını bir az açırıq ki, sözlər bir-birinə girməsin */
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-    }
-
-    /* Subtitle-ın mobildə çox uzun olub ekrandan çıxmaması üçün */
-    .hero-subtitle {
-        letter-spacing: 0.3em;
-        line-height: 1.6;
-    }
-}
-
-/* Light Mode Uyğunluğu (Əgər light-mode aktivdirsə) */
-body.light-mode #hero {
-    background-color: #f0f0f0;
-}
-body.light-mode .hero-video {
-    opacity: 0.2; /* Light mode-da videonu daha şəffaf edirik ki, mətn oxunsun */
-}
 
 @keyframes text-reveal {
     0% { transform: translateY(100%); opacity: 0; }
@@ -817,4 +836,30 @@ body.light-mode .back-to-top div:hover {
     .timeline-item { flex-direction: column; align-items: flex-start; }
     .timeline-content { width: calc(100% - 50px); margin-left: 50px; }
     .timeline-dot { left: 20px; }
+}
+
+
+@media (max-width: 768px) {
+    #hero {
+        /* Mobildə bütün ekranı tutmasın, videonun hündürlüyü qədər olsun */
+        height: auto;
+        padding: 60px 0; /* Mətnin sığması üçün yuxarı-aşağı məsafə */
+    }
+
+    .video-container {
+        /* 16:9 nisbətini mobildə məcburi saxlayırıq */
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    #hero video {
+        /* Video artıq kəsilməyəcək, çünki konteyner özü 16:9-dur */
+        position: relative;
+        object-fit: contain; 
+        opacity: 0.5; /* Mobildə bir az daha tünd edirik ki, mətn oxunsun */
+    }
+
+    .hero-title {
+        font-size: 10vw !important; /* Mətni bir az kiçiltdik ki, videonun içinə sığsın */
+    }
 }

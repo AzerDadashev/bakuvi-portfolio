@@ -30,14 +30,14 @@ window.addEventListener('load', () => {
 gsap.to(".flip-card-inner", {
     scrollTrigger: {
         trigger: "#about",
-        start: "top 10%",
-        end: "bottom 90%",
-        scrub: 1.5
+        start: "top 45%", // Kart ekranın mərkəzinə yaxınlaşanda başlasın
+        end: "bottom 55%", // Ekrandan çıxana qədər davam etsin
+        scrub: 1.5, // Daha yağ kimi, axıcı keçid
+        markers: false // Ehtiyac olsa true edib yoxlaya bilərsən
     },
     rotateY: 180,
-    x: window.innerWidth > 768 ? "20%" : 0,
-    scale: 0.85,
-    ease: "none"
+    scale: 0.95, // Fırlananda xəfif içəri çəkilmə (daha premium görünür)
+    ease: "sine.inOut" // Kəskin yox, yumşaq dönüş
 });
 
 // 5. Theme Switcher Logic
