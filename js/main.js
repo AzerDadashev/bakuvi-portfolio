@@ -182,15 +182,44 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(counter => counterObserver.observe(counter));
 
-fetch('https://api.countapi.xyz/hit/bakuvi.site/visits')
-  .then(res => res.json())
-  .then(data => {
-      const visitorEl = document.querySelector('.visitor-count');
-      if (visitorEl) {
-          visitorEl.innerText = data.value;
-      }
-  });
 
+// YENİ ZİYARƏTÇİ SAYĞACI (CountAPI.it istifadə edərək)
+async function updateVisitorCount() {
+    const counterEl = document.getElementById('visitor-count');
+    if (!counterEl) return;
+
+    // Sənin unikal namespace-in
+    const namespace = 'bakuvistudio2026';
+    const key = 'visits';
+
+    try {
+        // Real API istəyi
+        const response = await fetch(`https://api.countapi.it/hit/${namespace}/${key}`);
+        const data = await response.json();
+        
+        if (data && data.value) {
+            const realTotal = data.value;
+            
+            // Rəqəmi atributa yazırıq ki, runCounter onu oxuya bilsin
+            counterEl.setAttribute('data-target', realTotal);
+            
+            // Animasiyanı başladırıq
+            if (typeof runCounter === "function") {
+                runCounter(counterEl);
+            } else {
+                counterEl.innerText = realTotal;
+            }
+        }
+    } catch (error) {
+        console.error("Sayğac xətası:", error);
+        // API işləməsə görünəcək ehtiyat rəqəm
+        counterEl.setAttribute('data-target', '1240');
+        if (typeof runCounter === "function") runCounter(counterEl);
+    }
+}
+
+// Səhifə yüklənəndə işə sal
+window.addEventListener('load', updateVisitorCount);
 
 
 window.addEventListener('load', () => {
@@ -233,48 +262,9 @@ window.addEventListener('load', () => {
 });
 
 
-async function updateVisitorCount() {
-    const counterEl = document.getElementById('visitor-count');
-    
-    // QEYD: 'bakuvi-design-2026' sənin unikal ID-ndir. 
-    // Bu API səhifə hər dəfə yüklənəndə həmin ID üzrə rəqəmi +1 edir.
-    const namespace = 'bakuvidesign2026';
-    const key = 'visits';
 
-    try {
-        const response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
-        const data = await response.json();
-        
-        // API-dən gələn real rəqəmi (məsələn: 543) mənimsədirik
-        const realTotal = data.value;
-        counterEl.setAttribute('data-target', realTotal);
-        
-        // Sayğac animasiyasını başladırıq
-        if (typeof runCounter === "function") {
-            runCounter(counterEl);
-        }
-    } catch (error) {
-        // Əgər API-də problem olsa, keçən ayın təxmini rəqəmini göstərsin (boş qalmasın)
-        counterEl.setAttribute('data-target', '1240');
-        runCounter(counterEl);
-    }
-}
 
-async function updateVisitorCount() {
-    const counterEl = document.getElementById('visitor-count');
-    try {
-        const response = await fetch('https://api.countapi.xyz/hit/bakuvidesign2026/visits');
-        const data = await response.json();
-        console.log("Gələn rəqəm:", data.value); // Konsolda yoxla (F12)
-        
-        counterEl.setAttribute('data-target', data.value);
-        if (typeof runCounter === "function") {
-            runCounter(counterEl);
-        }
-    } catch (error) {
-        console.error("API Xətası:", error);
-    }
-}
+
 
 
 
