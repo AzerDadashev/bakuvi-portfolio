@@ -146,18 +146,26 @@ mobileLinks.forEach(link => {
 });
 </script>
 
-<section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale">
-        <source src="assets/videos/IMG_8332.MP4" type="video/mp4">
-    </video>
-    <div class="relative z-10 text-center px-4 reveal">
-        <p class="text-[10px] uppercase tracking-[0.8em] mb-6 opacity-60"
-   data-az="Sistem Arxitekturası · IT Analitika · Texniki İcra"
-   data-en="System Architecture · IT Analysis · Technical Execution">
-   Sistem Arxitekturası · IT Analitika · Texniki İcra
-</p>
+<section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+    <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <video autoplay muted loop playsinline preload="auto" 
+               class="hero-video absolute inset-0 w-full h-full object-cover opacity-40 grayscale pointer-events-none">
+            <source src="assets/videos/IMG_8332.MP4" type="video/mp4">
+        </video>
+    </div>
 
-        <h2 class="text-[7vw] font-syne uppercase font-extrabold leading-[0.9] tracking-tighter" data-az="Kodla Yazılan <br> Yaradıcılıq" data-en="Creativity <br> Written in Code"> Kodla Yazılan <br> Yaradıcılıq </h2>
+    <div class="relative z-10 text-center px-6 md:px-12 reveal">
+        <p class="hero-subtitle text-[8px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.8em] mb-4 md:mb-8 opacity-60"
+           data-az="Sistem Arxitekturası · IT Analitika · Texniki İcra"
+           data-en="System Architecture · IT Analysis · Technical Execution">
+           Sistem Arxitekturası · IT Analitika · Texniki İcra
+        </p>
+
+        <h2 class="hero-title text-[12vw] md:text-[7vw] font-syne uppercase font-extrabold leading-[0.85] tracking-tighter" 
+            data-az="Kodla Yazılan <br> Yaradıcılıq" 
+            data-en="Creativity <br> Written in Code"> 
+            Kodla Yazılan <br> Yaradıcılıq 
+        </h2>
     </div>
 </section>
 
@@ -389,6 +397,7 @@ mobileLinks.forEach(link => {
             <p class="text-[9px] text-zinc-600 mt-4 tracking-[0.2em]">Enterprise Networking</p>
         </div>
 
+        
 
     </div>
 </section>

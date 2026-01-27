@@ -176,6 +176,8 @@ nav a {
 }
 
 
+
+
 /* youtube section */
 #videos {
     background: radial-gradient(circle at top right, rgba(255,255,255,0.02), transparent);
@@ -646,6 +648,48 @@ body.animation-start #hero {
     opacity: 1;
     filter: blur(0px);
     transform: scale(1);
+}
+
+
+/* Hero Video üçün xüsusi tənzimləmə */
+.hero-video {
+    /* Mobildə videonun mərkəzləşdirilməsi */
+    object-position: center center;
+}
+
+/* Hero Başlığı üçün responsiv limitlər */
+.hero-title {
+    /* Çox böyük ekranlarda hərfin aşırı böyüməməsi üçün limit */
+    max-font-size: 180px;
+    min-font-size: 42px;
+}
+
+@media (max-width: 768px) {
+    #hero {
+        /* Mobildə hündürlüyü 100vh yerinə 100dvh (dynamic view height) etmək 
+           brauzer panellərinin (safari/chrome) problem yaratmasının qarşısını alır */
+        height: 100dvh;
+    }
+    
+    .hero-title {
+        /* Mobildə sətir arasını bir az açırıq ki, sözlər bir-birinə girməsin */
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    /* Subtitle-ın mobildə çox uzun olub ekrandan çıxmaması üçün */
+    .hero-subtitle {
+        letter-spacing: 0.3em;
+        line-height: 1.6;
+    }
+}
+
+/* Light Mode Uyğunluğu (Əgər light-mode aktivdirsə) */
+body.light-mode #hero {
+    background-color: #f0f0f0;
+}
+body.light-mode .hero-video {
+    opacity: 0.2; /* Light mode-da videonu daha şəffaf edirik ki, mətn oxunsun */
 }
 
 @keyframes text-reveal {
