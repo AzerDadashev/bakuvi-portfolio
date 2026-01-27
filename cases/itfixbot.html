@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITFixBot | AI Ecosystem — Azar Bakuvi</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+           <link rel="icon" type="image/x-icon" href="assets/images/Gemini_Generated_Image_x6w4tfx6w4tfx6w4-removebg-preview.png">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Syne:wght@700;800&display=swap');
+
+        :root {
+            --bg: #050505;
+            --accent: #3b82f6;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            background: var(--bg);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-syne { font-family: 'Syne', sans-serif; }
+
+        /* Premium Glassmorphism */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 30%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-img {
+            filter: grayscale(100%);
+            transition: 0.6s ease;
+        }
+        .gallery-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+<nav class="fixed w-full z-50 px-6 md:px-20 py-8 flex justify-between mix-blend-difference">
+    <a href="../index.html" class="text-[10px] uppercase tracking-[0.4em] hover:text-blue-400 transition" data-az="← GERİ" data-en="← BACK">← GERİ</a>
+    <div class="flex gap-4">
+        <button onclick="toggleLang('az')" class="text-[10px] font-bold opacity-50 hover:opacity-100">AZ</button>
+        <button onclick="toggleLang('en')" class="text-[10px] font-bold opacity-50 hover:opacity-100">EN</button>
+    </div>
+</nav>
+
+<section class="min-h-screen flex flex-col justify-center px-6 md:px-20 relative pt-20">
+    <div class="max-w-6xl reveal">
+        <div class="flex items-center gap-4 mb-8">
+            <span class="h-[1px] w-12 bg-blue-500"></span>
+            <span class="text-blue-500 text-xs uppercase tracking-[0.5em]" data-az="AI & SMART SUPPORT" data-en="AI & SMART SUPPORT">AI & SMART SUPPORT</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-[90px] font-syne font-extrabold uppercase leading-[0.9] mb-12 text-gradient">
+            ITFix <br> Intelligence
+        </h1>
+
+        <div class="grid md:grid-cols-4 gap-8 py-12 border-y border-white/5">
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Texnologiya" data-en="Tech Stack">Texnologiya</p>
+                <p class="text-xs font-semibold italic">PHP · Telegram API · OpenAI · PostgreSQL</p>
+            </div>
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Məqsəd" data-en="Objective">Məqsəd</p>
+                <p class="text-xs font-semibold" data-az="İT Proseslərin Avtomatlaşdırılması" data-en="IT Process Automation">İT Proseslərin Avtomatlaşdırılması</p>
+            </div>
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-2" data-az="İl" data-en="Year">İl</p>
+                <p class="text-xs font-semibold">2025</p>
+            </div>
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Status" data-en="Status">Status</p>
+                <p class="text-xs font-semibold text-emerald-400">Deployed & Active</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20">
+    <div class="grid md:grid-cols-2 gap-20 items-center">
+        <div class="reveal">
+            <h3 class="text-xs uppercase tracking-widest text-zinc-500 mb-6" data-az="01. Metodologiya" data-en="01. Methodology">01. Metodologiya</h3>
+            <h2 class="text-4xl font-syne uppercase mb-8" data-az="QR-dan Ticket-ə: 5 Sual" data-en="QR to Ticket: 5 Questions">QR-dan Ticket-ə: 5 Sual</h2>
+            <p class="text-zinc-400 leading-relaxed mb-6" data-az="Auditoriya və şöbələrə yerləşdirilmiş QR kodlar vasitəsilə istifadəçi dərhal bot-a yönləndirilir. '5 Sual' metodu ilə problemin kökü anlıq təyin edilir və uyğun İT əməkdaşına avtomatik tapşırıq (ticket) göndərilir." data-en="Users are instantly redirected to the bot via QR codes placed in auditoriums and departments. Using the '5 Questions' method, the root cause is identified, and a ticket is automatically assigned to the right IT specialist."></p>
+            
+            <div class="glass-card p-6 rounded-2xl inline-flex items-center gap-4">
+                <i class="fas fa-qrcode text-blue-500 text-2xl"></i>
+                <span class="text-xs font-bold uppercase tracking-widest" data-az="Hər otaq bir terminaldır" data-en="Every room is a terminal">Hər otaq bir terminaldır</span>
+            </div>
+        </div>
+        <div class="reveal delay-100">
+            <img src="../assets/images/dashboard-itfix.png" class="rounded-[2.5rem] gallery-img border border-white/10" alt="Bot Interface">
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20 bg-zinc-950/50">
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-10 rounded-[2.5rem] reveal">
+            <i class="fas fa-chart-line text-blue-500 text-3xl mb-8"></i>
+            <h4 class="text-xl font-syne mb-4 uppercase" data-az="Əməkdaş Analizi" data-en="Staff Analytics">Əməkdaş Analizi</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed" data-az="İşçilərin problem həll etmə sürəti və keyfiyyəti AI tərəfindən analiz olunur, aylıq KPI reytinqi formalaşdırılır." data-en="AI analyzes staff problem-solving speed and quality, generating monthly KPI ratings and performance reports."></p>
+        </div>
+        <div class="glass-card p-10 rounded-[2.5rem] reveal delay-100">
+            <i class="fas fa-gift text-purple-500 text-3xl mb-8"></i>
+            <h4 class="text-xl font-syne mb-4 uppercase" data-az="Gamification" data-en="Gamification">Gamification</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed" data-az="Toplanan pointlər ilə İT əməkdaşları müxtəlif mükafatlar qazanır. Bu, komanda daxili motivasiyanı artırır." data-en="IT staff earn points for successful tickets, which can be exchanged for rewards. Increases internal motivation."></p>
+        </div>
+        <div class="glass-card p-10 rounded-[2.5rem] reveal delay-200">
+            <i class="fas fa-boxes-stacked text-emerald-500 text-3xl mb-8"></i>
+            <h4 class="text-xl font-syne mb-4 uppercase" data-az="İnventar Nəzarəti" data-en="Inventory Control">İnventar Nəzarəti</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed" data-az="Bütün İT avadanlıqları sistemdə qeydiyyatdadır. Təmirə gedən və yeni daxil olan inventarlar real-vaxt izlənilir." data-en="All IT equipment is registered in the system. Repairs and new inventory are tracked in real-time."></p>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20">
+    <h2 class="text-3xl font-syne uppercase mb-16 text-center" data-az="Sistemdən Görüntülər" data-en="System Screenshots">Sistemdən Görüntülər</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 reveal">
+        <div class="glass-card p-4 rounded-[3rem]">
+            <img src="../assets/images/staff.png" class="rounded-[2.5rem] gallery-img w-full h-[400px] object-cover" alt="Analytics">
+        </div>
+        <div class="glass-card p-4 rounded-[3rem]">
+            <img src="../assets/images/report.png" class="rounded-[2.5rem] gallery-img w-full h-[400px] object-cover" alt="Telegram Interface">
+        </div>
+    </div>
+</section>
+
+<section class="py-40 px-6 md:px-20 border-t border-white/5">
+    <div class="grid md:grid-cols-3 gap-16 text-center">
+        <div class="reveal">
+            <h2 class="text-6xl font-syne font-bold text-blue-500">85%</h2>
+            <p class="text-[10px] uppercase tracking-[0.3em] opacity-40 mt-4" data-az="Avtomatlaşdırılmış Cavablar" data-en="Automated Responses">Avtomatlaşdırılmış Cavablar</p>
+        </div>
+        <div class="reveal delay-100">
+            <h2 class="text-6xl font-syne font-bold">100+</h2>
+            <p class="text-[10px] uppercase tracking-[0.3em] opacity-40 mt-4" data-az="Gündəlik Ticket" data-en="Daily Tickets">Gündəlik Ticket</p>
+        </div>
+        <div class="reveal delay-200">
+            <h2 class="text-6xl font-syne font-bold text-emerald-500">2.5m</h2>
+            <p class="text-[10px] uppercase tracking-[0.3em] opacity-40 mt-4" data-az="Orta Həll Müddəti" data-en="Avg Solution Time">Orta Həll Müddəti</p>
+        </div>
+    </div>
+</section>
+
+<footer class="py-40 text-center border-t border-white/5 reveal">
+    <a href="hr-automation.html" class="group">
+        <span class="text-[9px] uppercase tracking-[0.6em] text-zinc-500 group-hover:text-white transition" data-az="NÖVBƏTİ LAYİHƏ" data-en="NEXT PROJECT">NÖVBƏTİ LAYİHƏ</span>
+        <h2 class="text-5xl md:text-8xl font-syne uppercase mt-8 group-hover:italic transition-all duration-500">HR Automation →</h2>
+    </a>
+</footer>
+
+<script>
+    // Reveal Observer
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Language Toggle
+    function toggleLang(lang) {
+        document.querySelectorAll('[data-az]').forEach(el => {
+            el.innerText = el.getAttribute('data-' + lang);
+        });
+    }
+</script>
+
+</body>
+</html>

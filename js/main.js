@@ -58,21 +58,21 @@ if (localStorage.getItem('theme') === 'light') {
 }
 
 // 6. Blog Hover Preview
-const blogItems = document.querySelectorAll('.blog-item');
-const navImg = document.querySelector('.blog-nav-img');
+// const blogItems = document.querySelectorAll('.blog-item');
+// const navImg = document.querySelector('.blog-nav-img');
 
-blogItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        navImg.src = item.getAttribute('data-img');
-        gsap.to(navImg, { opacity: 1, scale: 1, duration: 0.3 });
-    });
-    item.addEventListener('mouseleave', () => {
-        gsap.to(navImg, { opacity: 0, scale: 0.8, duration: 0.3 });
-    });
-    item.addEventListener('mousemove', (e) => {
-        gsap.to(navImg, { x: e.clientX, y: e.clientY, duration: 0.5 });
-    });
-});
+// blogItems.forEach(item => {
+//     item.addEventListener('mouseenter', () => {
+//         navImg.src = item.getAttribute('data-img');
+//         gsap.to(navImg, { opacity: 1, scale: 1, duration: 0.3 });
+//     });
+//     item.addEventListener('mouseleave', () => {
+//         gsap.to(navImg, { opacity: 0, scale: 0.8, duration: 0.3 });
+//     });
+//     item.addEventListener('mousemove', (e) => {
+//         gsap.to(navImg, { x: e.clientX, y: e.clientY, duration: 0.5 });
+//     });
+// });
 
 // 7. General Reveal Animation
 gsap.utils.toArray('.reveal').forEach(el => {
@@ -143,31 +143,54 @@ const counters = document.querySelectorAll('.counter-num');
 
 const runCounter = (el) => {
     const target = +el.getAttribute('data-target');
-    const count = +el.innerText;
-    // Sürəti tənzimləmək üçün (rəqəm böyükdürsə daha sürətli artır)
-    const increment = target / 50; 
+    let count = 0;
+    const speed = 1500;
+    const step = target / (speed / 30);
 
-    if (count < target) {
-        el.innerText = Math.ceil(count + increment);
-        setTimeout(() => runCounter(el), 30);
-    } else {
-        el.innerText = target;
+    const update = () => {
+        count += step;
+        if (count < target) {
+            el.innerText = Math.ceil(count);
+            setTimeout(update, 30);
+        } else {
+            // 99 üçün xüsusi qayda
+            if (target === 99) {
+                el.innerText = "99%";
+            } else {
+                el.innerText = target;
+            }
+        }
+    };
+
+    if (el.innerText === "0" || el.innerText === "") {
+        update();
     }
 };
+
 
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Hər dəfə ekrana girəndə animasiyanı başlat
             runCounter(entry.target);
         } else {
-            // Ekrandan çıxanda rəqəmi sıfırla ki, növbəti dəfə yenidən artsın
-            entry.target.innerText = "0";
+    if (!entry.target.classList.contains('visitor-count')) {
+        entry.target.innerText = "0";
+    }
         }
     });
-}, { threshold: 0.5 }); // 50% görünəndə tətiklənir
+}, { threshold: 0.8 });
 
 counters.forEach(counter => counterObserver.observe(counter));
+
+fetch('https://api.countapi.xyz/hit/bakuvi.site/visits')
+  .then(res => res.json())
+  .then(data => {
+      const visitorEl = document.querySelector('.visitor-count');
+      if (visitorEl) {
+          visitorEl.innerText = data.value;
+      }
+  });
+
 
 
 window.addEventListener('load', () => {
@@ -280,3 +303,153 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'az';
     changeLang(savedLang);
 });
+
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const clickableImgs = document.querySelectorAll('.clickable-img img');
+
+clickableImgs.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Scrollu bağla
+    });
+});
+
+lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Scrollu aç
+});
+
+
+
+const blogItems = document.querySelectorAll('.blog-item');
+const previewContainer = document.getElementById('blog-cursor-img');
+const previewImg = previewContainer.querySelector('img');
+
+blogItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        const imgSrc = item.getAttribute('data-img');
+        previewImg.src = imgSrc;
+        gsap.to(previewContainer, { opacity: 1, scale: 1, duration: 0.3 });
+    });
+
+    item.addEventListener('mouseleave', () => {
+        gsap.to(previewContainer, { opacity: 0, scale: 0.5, duration: 0.3 });
+    });
+
+    item.addEventListener('mousemove', (e) => {
+        gsap.to(previewContainer, {
+            x: e.clientX + 20,
+            y: e.clientY - 100,
+            duration: 0.6,
+            ease: "power2.out"
+        });
+    });
+});
+
+
+
+const YT_API_KEY = 'AIzaSyApVpCaOmoUPeFqL5O6efafGjS1zpL1D0k'; 
+const CHANNEL_ID = 'UCHy-rfZPIbGIOdI-zC-i8Pg';
+const MAX_RESULTS = 8;
+
+const playlistContainer = document.getElementById('playlist-container');
+const mainVideoFrame = document.getElementById('main-video-frame');
+const mainVideoTitle = document.getElementById('main-video-title');
+
+// Ehtiyat siyahı (API limiti dolduqda və ya xəta olduqda bura görünəcək)
+const FALLBACK_VIDEOS = [
+    { 
+        id: { videoId: 'yjynoxsMwco' }, 
+        snippet: { title: 'Sistem Arxitekturası Analizi', thumbnails: { medium: { url: 'https://img.youtube.com/vi/yjynoxsMwco/mqdefault.jpg' } } } 
+    },
+     { 
+        id: { videoId: 'nsGl5-XfcQk' }, 
+        snippet: { title: 'Azar İntro', thumbnails: { medium: { url: 'https://img.youtube.com/vi/nsGl5-XfcQk/mqdefault.jpg' } } } 
+    },
+     
+];
+
+async function fetchPlaylist() {
+    try {
+        // API-dən videoları tarixinə görə sıralanmış çəkirik
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${AIzaSyApVpCaOmoUPeFqL5O6efafGjS1zpL1D0k}&channelId=${UCHy-rfZPIbGIOdI-zC-i8Pg}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}&type=video`);
+        const data = await response.json();
+
+        if (data.items && data.items.length > 0) {
+            renderPlaylist(data.items);
+        } else {
+            console.warn("API boş döndü, fallback istifadə olunur.");
+            renderPlaylist(FALLBACK_VIDEOS);
+        }
+    } catch (err) {
+        console.error("YouTube API Xətası:", err);
+        renderPlaylist(FALLBACK_VIDEOS);
+    }
+}
+
+function renderPlaylist(videos) {
+    if (!playlistContainer) return;
+    playlistContainer.innerHTML = ''; // Əvvəlki içindəkiləri təmizlə
+
+    videos.forEach((video, index) => {
+        const videoId = video.id.videoId;
+        const title = video.snippet.title;
+        const thumb = video.snippet.thumbnails.medium.url;
+
+        // Video Item yaradılması
+        const item = document.createElement('div');
+        item.className = `video-item group cursor-pointer ${index === 0 ? 'active' : ''}`;
+        
+        item.innerHTML = `
+            <div class="thumb-wrap">
+                <img src="${thumb}" alt="thumbnail">
+                <div class="play-hint">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+            </div>
+            <div class="flex-1">
+                <h6 class="text-[11px] font-bold uppercase leading-tight tracking-wide group-hover:text-white transition-colors duration-300">
+                    ${title}
+                </h6>
+                <span class="text-[9px] opacity-30 mt-2 block font-mono">Real Analysis</span>
+            </div>
+        `;
+
+        // Klikləyəndə videonu dəyişmək
+        item.onclick = (e) => changeVideo(videoId, title, e);
+        playlistContainer.appendChild(item);
+
+        // İlk videonu səhifə açılanda avtomatik yüklə
+        if (index === 0) {
+            updateMainPlayer(videoId, title);
+        }
+    });
+}
+
+function updateMainPlayer(id, title) {
+    mainVideoFrame.style.opacity = '0';
+    setTimeout(() => {
+        mainVideoFrame.src = `https://www.youtube.com/embed/${id}?autoplay=0&rel=0&mute=1`;
+        mainVideoTitle.innerText = title;
+        mainVideoFrame.style.opacity = '1';
+    }, 500);
+}
+
+function changeVideo(id, title, event) {
+    updateMainPlayer(id, title);
+
+    // Aktivlik klassını idarə et
+    document.querySelectorAll('.video-item').forEach(el => el.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    // Mobil versiyada pleyerə sürüşdür
+    if (window.innerWidth < 1024) {
+        document.getElementById('videos').scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+fetchPlaylist();
+

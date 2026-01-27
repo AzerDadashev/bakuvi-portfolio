@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Ecosystem Transformation | Azar Bakuvi</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+           <link rel="icon" type="image/x-icon" href="assets/images/Gemini_Generated_Image_x6w4tfx6w4tfx6w4-removebg-preview.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg: #050505;
+            --accent: #2563eb;
+            --glass: rgba(255, 255, 255, 0.02);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background: var(--bg);
+            color: #fafafa;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .font-syne { font-family: 'Space Grotesk', sans-serif; }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            transition: 0.4s ease;
+        }
+
+        .glass-panel:hover {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fff 20%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .partner-logo {
+            filter: grayscale(1) brightness(0.7);
+            transition: 0.3s ease;
+        }
+        .partner-logo:hover { filter: grayscale(0) brightness(1); }
+
+        .gallery-img {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 24px;
+            filter: saturate(0.8) brightness(0.8);
+            transition: 0.5s ease;
+        }
+        .gallery-img:hover { filter: saturate(1.2) brightness(1); transform: scale(1.02); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<nav class="fixed w-full z-50 px-6 md:px-20 py-8 flex justify-between items-center mix-blend-difference">
+    <a href="../index.html" class="text-[10px] uppercase tracking-[0.5em] font-bold" data-az="← GERİ" data-en="← BACK">← GERİ</a>
+    <div class="flex gap-6 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+        <button onclick="toggleLang('az')" class="text-[10px] font-bold hover:text-blue-500 transition">AZ</button>
+        <button onclick="toggleLang('en')" class="text-[10px] font-bold hover:text-blue-500 transition">EN</button>
+    </div>
+</nav>
+
+<section class="min-h-screen flex flex-col justify-center px-6 md:px-20 relative pt-32 overflow-hidden">
+    <div class="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full"></div>
+    
+    <div class="max-w-6xl reveal">
+        <div class="flex items-center gap-4 mb-8">
+            <span class="h-[1px] w-12 bg-blue-500"></span>
+            <span class="text-blue-500 text-[10px] uppercase tracking-[0.6em] font-bold" data-az="SMART İNFRASTRUKTUR" data-en="SMART INFRASTRUCTURE">SMART İNFRASTRUKTUR</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-[100px] font-syne font-bold leading-tight mb-12 text-gradient">
+            Integrated HR <br> Ecosystem
+        </h1>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 py-12 border-t border-white/10">
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-3 tracking-widest" data-az="Texnologiyalar" data-en="Core Stack">Texnologiyalar</p>
+                <p class="text-xs font-medium">PostgreSQL / Python<br>ZKTeco SDK / NFC</p>
+            </div>
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-3 tracking-widest" data-az="Partnyorlar" data-en="Collaborators">Partnyorlar</p>
+                <div class="flex gap-4 items-center">
+                    <span class="text-xs font-bold text-blue-500">ABB</span>
+                    <span class="text-xs font-bold">ZKTeco</span>
+                    <span class="text-xs font-bold">Prolink</span>
+                </div>
+            </div>
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-3 tracking-widest" data-az="Sektor" data-en="Industry">Sektor</p>
+                <p class="text-xs font-medium" data-az="Təhsil & HR" data-en="Education & HR">Təhsil & HR</p>
+            </div>
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-3 tracking-widest" data-az="Layihə Tipi" data-en="Project Type">Layihə Tipi</p>
+                <p class="text-xs font-medium" data-az="Rəqəmsal Transformasiya" data-en="Digital Transformation">Rəqəmsal Transformasiya</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20">
+    <div class="grid md:grid-cols-12 gap-16">
+        <div class="md:col-span-5 reveal active"> <h2 class="text-3xl font-syne uppercase mb-10 text-blue-500" data-az="Problem nə idi?" data-en="The Challenge">
+                Problem nə idi?
+            </h2>
+            <div class="space-y-6 text-zinc-300 text-sm leading-relaxed">
+                <p data-az="Layihədən əvvəl bütün HR prosesləri pərakəndə idi. Turniketlərdən keçid, işçi davamiyyəti və tələbə kartları fərqli sistemlərdə saxlanılırdı. NFC kartlar köhnəlmiş və təhlükəsizlik boşluqları olan formatda idi." 
+                   data-en="Before the project, all HR processes were fragmented. Access logs, employee attendance, and student cards were kept in separate systems. NFC cards were outdated and prone to security risks.">
+                   Layihədən əvvəl bütün HR prosesləri pərakəndə idi. Turniketlərdən keçid, işçi davamiyyəti və tələbə kartları fərqli sistemlərdə saxlanılırdı. NFC kartlar köhnəlmiş və təhlükəsizlik boşluqları olan formatda idi.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex gap-3">
+                        <i class="fas fa-times text-red-500 mt-1"></i> 
+                        <span data-az="Məlumatların Excel-də manual idarə edilməsi." data-en="Manual data management in Excel sheets.">Məlumatların Excel-də manual idarə edilməsi.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i class="fas fa-times text-red-500 mt-1"></i> 
+                        <span data-az="Anti-pass back sisteminin olmaması." data-en="Lack of Anti-pass back security.">Anti-pass back sisteminin olmaması.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i class="fas fa-times text-red-500 mt-1"></i> 
+                        <span data-az="Maaş hesablanmasında dəqiq vaxt uçotunun çətinliyi." data-en="Difficulty in precise time-tracking for payroll.">Maaş hesablanmasında dəqiq vaxt uçotunun çətinliyi.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal delay-200">
+            <div class="glass-panel p-8 rounded-3xl">
+                <i class="fas fa-id-card-alt text-blue-500 text-3xl mb-6"></i>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest" data-az="Smart Kart İnteqrasiyası" data-en="Smart Card Integration">Smart Kart İnteqrasiyası</h4>
+                <p class="text-[11px] text-zinc-500" data-az="ABB ilə bütün təhsil və NFC kartlar yeniləndi. Tələbə və işçi məlumatları tək bir çipdə birləşdirildi." data-en="All education and NFC cards updated via ABB. Student and staff data unified on a single chip."></p>
+            </div>
+            <div class="glass-panel p-8 rounded-3xl">
+                <i class="fas fa-shield-virus text-blue-500 text-3xl mb-6"></i>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest" data-az="Təkmil Təhlükəsizlik" data-en="Advanced Security">Təkmil Təhlükəsizlik</h4>
+                <p class="text-[11px] text-zinc-500" data-az="Prolink tərəfindən quraşdırılan ZKTeco turniketlərində Anti-pass back və real-time log sistemi quruldu." data-en="ZKTeco turnstiles installed by Prolink featured Anti-pass back and real-time logging."></p>
+            </div>
+            <div class="glass-panel p-8 rounded-3xl">
+                <i class="fas fa-code-branch text-blue-500 text-3xl mb-6"></i>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest" data-az="SQL Data Lake" data-en="SQL Data Lake">SQL Data Lake</h4>
+                <p class="text-[11px] text-zinc-500" data-az="Bütün işçi dataları, departmentlər və loglar PostgreSQL bazasında strukturlaşdırıldı." data-en="All staff data, departments, and logs structured in a PostgreSQL database."></p>
+            </div>
+            <div class="glass-panel p-8 rounded-3xl">
+                <i class="fas fa-chart-pie text-blue-500 text-3xl mb-6"></i>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest" data-az="Avtomatlaşdırılmış Analitika" data-en="Automated Analytics">Avtomatlaşdırılmış Analitika</h4>
+                <p class="text-[11px] text-zinc-500" data-az="Gecikmələr, məzuniyyətlər və maaş hesablamaları sistem tərəfindən avtomatik idarə olunur." data-en="Delays, vacations, and payroll calculations are now managed automatically by the system."></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20 bg-zinc-950/50 relative">
+    <div class="grid md:grid-cols-12 gap-10 items-center">
+        <div class="md:col-span-8 glass-panel p-10 rounded-[40px] reveal">
+            <div class="flex justify-between items-center mb-10">
+                <h3 class="text-xl font-syne" data-az="Gündəlik Giriş-Çıxış Analitiki" data-en="Daily Traffic Insights">Gündəlik Giriş-Çıxış Analitiki</h3>
+                <div class="flex gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    <span class="text-[10px] uppercase opacity-50">Live Sync</span>
+                </div>
+            </div>
+            <canvas id="liveChart" height="150"></canvas>
+        </div>
+        
+        <div class="md:col-span-4 space-y-6 reveal delay-200">
+            <div class="glass-panel p-8 rounded-3xl text-center">
+                <p class="text-[10px] uppercase opacity-40 mb-2 tracking-[0.3em]" data-az="Ümumi Log Sayı" data-en="Total Logs">Ümumi İstifadəçi Sayı</p>
+                <h2 class="text-5xl font-syne font-bold text-gradient">5000+</h2>
+            </div>
+            <div class="glass-panel p-8 rounded-3xl text-center border-blue-500/30">
+                <p class="text-[10px] uppercase opacity-40 mb-2 tracking-[0.3em]" data-az="Dəqiqlik" data-en="Accuracy Rate">Dəqiqlik</p>
+                <h2 class="text-5xl font-syne font-bold">99.9%</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20">
+    <h2 class="text-3xl font-syne uppercase mb-16 text-center" data-az="Layihədən Görüntülər" data-en="Project Gallery">Layihədən Görüntülər</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+        <div class="relative group">
+            <img src="../assets/images/zkt-dashboard.png" class="gallery-img w-full" alt="Turnstiles">
+            <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition duration-500">
+                <span class="bg-blue-600 text-white text-[9px] px-3 py-1 rounded-full uppercase font-bold">ZKTeco Hardware</span>
+            </div>
+        </div>
+        <div class="relative group">
+            <img src="../assets/images/dashboard.png" class="gallery-img w-full" alt="Dashboard">
+            <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition duration-500">
+                <span class="bg-blue-600 text-white text-[9px] px-3 py-1 rounded-full uppercase font-bold">PostgreSQL Admin</span>
+            </div>
+        </div>
+        <div class="relative group">
+            <img src="../assets/images/attendance.png" class="gallery-img w-full" alt="Smart Cards">
+            <div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition duration-500">
+                <span class="bg-blue-600 text-white text-[9px] px-3 py-1 rounded-full uppercase font-bold">ABB NFC Cards</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20 bg-white/5">
+    <div class="max-w-4xl mx-auto space-y-20">
+        <div class="flex flex-col md:flex-row gap-10 items-center reveal">
+            <span class="text-7xl font-bold font-syne opacity-10 italic">01</span>
+            <div>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-widest" data-az="Data Toplanması" data-en="Data Ingestion">Data Toplanması</h3>
+                <p class="text-sm text-zinc-400" data-az="Bütün işçilər üçün mərkəzləşdirilmiş forum vasitəsilə baza yaradıldı. Doğum günləri, mail və vəzifə məlumatları tam rəqəmsallaşdırıldı." data-en="A centralized database was created for all employees. Birthdays, emails, and position details were fully digitized."></p>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-10 items-center reveal">
+            <span class="text-7xl font-bold font-syne opacity-10 italic">02</span>
+            <div>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-widest" data-az="Real-Time Monitorinq" data-en="Real-Time Monitoring">Real-Time Monitorinq</h3>
+                <p class="text-sm text-zinc-400" data-az="İşçilərin gəliş-gediş saatları, nahar fasilələri və ümumi iş saatları PostgreSQL bazasında hər saniyə qeyd olunur." data-en="Employee entry-exit times, lunch breaks, and total working hours are recorded every second in PostgreSQL."></p>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-10 items-center reveal">
+            <span class="text-7xl font-bold font-syne opacity-10 italic">03</span>
+            <div>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-widest" data-az="Avtomatik Hesabatlılıq" data-en="Automatic Reporting">Avtomatik Hesabatlılıq</h3>
+                <p class="text-sm text-zinc-400" data-az="Mühasibatlıq üçün aylıq davamiyyət tabeli bir kliklə hazırlanır. Gecikən işçilərə avtomatik bildirişlər göndərilir." data-en="Monthly attendance tables for accounting are generated with one click. Automatic notifications are sent to late employees."></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 border-y border-white/5">
+    <div class="flex flex-wrap justify-center gap-20 items-center opacity-40">
+        <img src="../assets/images/ABB_Logo.png" class="partner-logo h-16" alt="ABB">
+        <img src="../assets/images/zkteco.jpg" class="partner-logo h-16" alt="ZKTeco">
+        <img src="../assets/images/logo-prolink-qara.png" class="partner-logo h-16" alt="Prolink">
+    </div>
+</section>
+
+<footer class="py-40 text-center reveal">
+    <a href="itfixbot.html" class="group">
+        <span class="text-[9px] uppercase tracking-[0.5em] text-zinc-500 group-hover:text-white transition">Keep Exploring</span>
+        <h2 class="text-5xl md:text-[120px] font-syne font-bold uppercase mt-8 group-hover:tracking-[0.1em] transition-all duration-700">Next Case →</h2>
+    </a>
+</footer>
+
+<script>
+    // Reveal On Scroll
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Lang Switcher
+    function toggleLang(lang) {
+        document.querySelectorAll('[data-az]').forEach(el => {
+            el.innerText = el.getAttribute('data-' + lang);
+        });
+    }
+
+    // Chart.js Configuration
+    const ctx = document.getElementById('liveChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
+            datasets: [{
+                label: 'Pass Flow',
+                data: [150, 890, 420, 280, 710, 980, 310],
+                borderColor: '#2563eb',
+                backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                fill: true,
+                tension: 0.5,
+                borderWidth: 3,
+                pointRadius: 4,
+                pointBackgroundColor: '#2563eb'
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { display: false },
+                x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#444', font: { size: 10 } } }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

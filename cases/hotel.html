@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Park Hotel | Case Study — Azar Bakuvi</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+           <link rel="icon" type="image/x-icon" href="assets/images/Gemini_Generated_Image_x6w4tfx6w4tfx6w4-removebg-preview.png">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+        :root {
+            --bg: #0a0a0a;
+            --gold: #c5a059;
+            --glass: rgba(255, 255, 255, 0.02);
+        }
+
+        body {
+            background: var(--bg);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+
+        .gold-border { border-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background: var(--gold); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .btn-gold {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            transition: 0.4s;
+        }
+        .btn-gold:hover {
+            background: var(--gold);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="fixed w-full z-50 px-6 md:px-20 py-8 flex justify-between items-center mix-blend-difference">
+    <a href="../index.html" class="text-[10px] uppercase tracking-[0.4em] font-bold" data-az="← GERİ" data-en="← BACK">← GERİ</a>
+    <div class="flex gap-6">
+        <button onclick="toggleLang('az')" class="text-[10px] font-bold hover:text-gold transition">AZ</button>
+        <button onclick="toggleLang('en')" class="text-[10px] font-bold hover:text-gold transition">EN</button>
+    </div>
+</nav>
+
+<section class="h-screen flex items-center justify-center text-center px-6 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-40 parallax-bg" style="background-image: url('../assets/images/cp_hero.jpg');"></div>
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+    <div class="relative z-20 reveal">
+        <h3 class="text-gold text-xs uppercase tracking-[0.6em] mb-6" data-az="LÜKS OTEL VƏ REZERVASİYA" data-en="LUXURY HOTEL & BOOKING">LÜKS OTEL VƏ REZERVASİYA</h3>
+        <h1 class="text-6xl md:text-9xl font-serif italic mb-10">Central Park</h1>
+        <a href="https://centralpark.az" target="_blank" class="px-10 py-4 btn-gold uppercase text-[10px] tracking-widest font-bold">
+            Live Project <i class="fas fa-external-link-alt ml-2"></i>
+        </a>
+    </div>
+</section>
+
+<section class="py-24 px-6 md:px-20 border-b border-white/10">
+    <div class="grid md:grid-cols-4 gap-12">
+        <div class="reveal">
+            <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Xidmət" data-en="Service">Xidmət</p>
+            <p class="text-sm font-semibold">Web Design & Booking System</p>
+        </div>
+        <div class="reveal delay-100">
+            <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Platforma" data-en="Platform">Platforma</p>
+            <p class="text-sm font-semibold">Custom CMS / PHP</p>
+        </div>
+        <div class="reveal delay-200">
+            <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Funksiyalar" data-en="Features">Funksiyalar</p>
+            <p class="text-sm font-semibold" data-az="Rezervasiya, Qalereya, Çoxdillilik" data-en="Booking, Gallery, Multilingual">Rezervasiya, Qalereya, Çoxdillilik</p>
+        </div>
+        <div class="reveal delay-300">
+            <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Müddət" data-en="Duration">Müddət</p>
+            <p class="text-sm font-semibold">4 Weeks</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20 grid md:grid-cols-2 gap-20 items-center">
+    <section class="relative z-20 py-32 px-6 md:px-20 bg-[#0a0a0a]">
+    <div class="grid md:grid-cols-2 gap-20 items-center">
+        <div class="reveal active"> <h2 class="text-4xl font-serif italic text-gold mb-8" data-az="Rəqəmsal Qonaqpərvərlik" data-en="Digital Hospitality">
+                Rəqəmsal Qonaqpərvərlik
+            </h2>
+            <div class="space-y-6 text-zinc-300 text-sm leading-relaxed">
+                <p data-az="Central Park Hotel üçün hazırladığımız saytda əsas məqsəd qonağın otelə gəlmədən öncə həmin atmosferi hiss etməsi idi. Köhnə sistem mürəkkəb idi, biz isə cəmi 3 addımda rezervasiya funksiyasını tətbiq etdik." 
+                   data-en="The main goal for Central Park Hotel's website was to make the guest feel the atmosphere before they even arrived. The old system was complex; we implemented a 3-step booking function.">
+                   Central Park Hotel üçün hazırladığımız saytda əsas məqsəd qonağın otelə gəlmədən öncə həmin atmosferi hiss etməsi idi. Köhnə sistem mürəkkəb idi, biz isə cəmi 3 addımda rezervasiya funksiyasını tətbiq etdik.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex gap-3 items-center">
+                        <i class="fas fa-check text-gold"></i> 
+                        <span data-az="İntuitiv otaq seçimi və filtrasiya" data-en="Intuitive room selection and filtration">
+                            İntuitiv otaq seçimi və filtrasiya
+                        </span>
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <i class="fas fa-check text-gold"></i> 
+                        <span data-az="Mobil cihazlar üçün tam optimizasiya" data-en="Full optimization for mobile devices">
+                            Mobil cihazlar üçün tam optimizasiya
+                        </span>
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <i class="fas fa-check text-gold"></i> 
+                        <span data-az="Yüksək keyfiyyətli vizual qalereya sistemi" data-en="High-quality visual gallery system">
+                            Yüksək keyfiyyətli vizual qalereya sistemi
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="reveal active delay-200">
+            <div class="relative group">
+                <div class="absolute -inset-2 bg-gold/10 blur-xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
+                <img src="../assets/images/Hotel-1.png" class="relative rounded-2xl border border-white/10 w-full shadow-2xl" alt="Booking Interface">
+            </div>
+        </div>
+    </div>
+</section>
+    <div class="reveal delay-200">
+        <div class="relative group">
+            <div class="absolute -inset-2 bg-gold/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
+            <img src="../assets/images/Hotel-3.png" class="relative rounded-2xl border border-white/10" alt="Booking Interface">
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20 bg-zinc-950">
+    <div class="text-center mb-20 reveal">
+        <h2 class="text-5xl font-serif italic mb-4" data-az="Vizual Təcrübə" data-en="Visual Experience">Vizual Təcrübə</h2>
+        <p class="text-[10px] uppercase tracking-widest text-gold opacity-60">Curated Spaces & Rooms</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="../assets/images/Hotel-2.png" class="w-full h-[500px] object-cover rounded-3xl reveal" alt="Deluxe Room">
+        <img src="../assets/images/Hotel-4.png" class="w-full h-[500px] object-cover rounded-3xl reveal delay-100" alt="Lobby">
+        <img src="../assets/images/Hotel-5.png" class="w-full h-[500px] object-cover rounded-3xl reveal delay-200" alt="Restaurant">
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-serif italic text-center mb-20" data-az="Rezervasiya Prosesi" data-en="Booking Process">Rezervasiya Prosesi</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="text-center reveal">
+                <div class="w-16 h-16 rounded-full border border-gold flex items-center justify-center mx-auto mb-8 text-gold font-serif text-2xl italic">1</div>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest" data-az="Tarix Seçimi" data-en="Pick Dates">Tarix Seçimi</h4>
+                <p class="text-xs text-zinc-500" data-az="Giriş və çıxış tarixlərini asanlıqla təyin edin." data-en="Set your check-in and check-out dates easily."></p>
+            </div>
+            <div class="text-center reveal delay-100">
+                <div class="w-16 h-16 rounded-full border border-gold flex items-center justify-center mx-auto mb-8 text-gold font-serif text-2xl italic">2</div>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest" data-az="Otaq növü" data-en="Room Type">Otaq növü</h4>
+                <p class="text-xs text-zinc-500" data-az="Ehtiyacınıza uyğun lüks otağı seçin." data-en="Select the luxury room that fits your needs."></p>
+            </div>
+            <div class="text-center reveal delay-200">
+                <div class="w-16 h-16 rounded-full border border-gold flex items-center justify-center mx-auto mb-8 text-gold font-serif text-2xl italic">3</div>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest" data-az="Təsdiqləmə" data-en="Confirmation">Təsdiqləmə</h4>
+                <p class="text-xs text-zinc-500" data-az="Anlıq təsdiq bildirişi ilə otağınızı ayırın." data-en="Secure your room with instant confirmation."></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-40 text-center border-t border-white/5 reveal">
+    <a href="itfixbot.html" class="group">
+        <span class="text-[9px] uppercase tracking-[0.5em] text-zinc-500 group-hover:text-gold transition">View Next Experience</span>
+        <h2 class="text-5xl md:text-8xl font-serif italic mt-8 group-hover:tracking-[0.05em] transition-all duration-700">ITFix Intelligence →</h2>
+    </a>
+</footer>
+
+<script>
+    // Reveal Observer
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Language Toggle
+    function toggleLang(lang) {
+        document.querySelectorAll('[data-az]').forEach(el => {
+            el.innerText = el.getAttribute('data-' + lang);
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise DMS | Case Study — Azar Bakuvi</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+           <link rel="icon" type="image/x-icon" href="assets/images/Gemini_Generated_Image_x6w4tfx6w4tfx6w4-removebg-preview.png">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+        :root {
+            --bg: #050505;
+            --accent: #facc15; /* Enterprise Yellow */
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            background: var(--bg);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-syne { font-family: 'Syne', sans-serif; }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 40%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline connector for hierarchy */
+        .hierarchy-line {
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="fixed w-full z-50 px-6 md:px-20 py-8 flex justify-between items-center mix-blend-difference">
+    <a href="../index.html" class="text-[10px] uppercase tracking-[0.4em] font-bold" data-az="← GERİ" data-en="← BACK">← GERİ</a>
+    <div class="flex gap-4">
+        <button onclick="toggleLang('az')" class="text-[10px] font-bold opacity-50 hover:opacity-100 hover:text-yellow-400">AZ</button>
+        <button onclick="toggleLang('en')" class="text-[10px] font-bold opacity-50 hover:opacity-100 hover:text-yellow-400">EN</button>
+    </div>
+</nav>
+
+<section class="min-h-screen flex flex-col justify-end px-6 md:px-20 pb-20 relative overflow-hidden">
+    <img src="../assets/images/Sened dovriyyesi.png" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale">
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
+
+    <div class="relative z-10 max-w-6xl reveal">
+        <span class="text-yellow-500 text-xs uppercase tracking-[0.6em] block mb-8" data-az="RƏQƏMSAL SƏNƏD DÖVRİYYƏSİ" data-en="DIGITAL DOCUMENT FLOW">RƏQƏMSAL SƏNƏD DÖVRİYYƏSİ</span>
+        <h1 class="text-6xl md:text-[140px] font-syne font-extrabold uppercase leading-none tracking-tighter text-gradient">
+            SMART <br> DMS
+        </h1>
+
+        <div class="grid md:grid-cols-3 gap-12 mt-20 border-t border-white/10 pt-12">
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Rol" data-en="Role">Rol</p>
+                <p class="text-sm font-semibold">Lead Architect</p>
+            </div>
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Texnologiya" data-en="Tech Stack">Texnologiya</p>
+                <p class="text-sm font-semibold italic">.NET Core · SQL Server · SignalR</p>
+            </div>
+            <div>
+                <p class="text-[9px] uppercase opacity-40 mb-2" data-az="Platforma" data-en="Platform">Platforma</p>
+                <p class="text-sm font-semibold">Web Enterprise Solution</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20 bg-zinc-950/50">
+    <div class="grid md:grid-cols-2 gap-20">
+        <div class="reveal">
+            <h2 class="text-4xl font-syne uppercase mb-10" data-az="Hiyerarxik İş Axını" data-en="Hierarchical Workflow">Hiyerarxik İş Axını</h2>
+            <div class="space-y-12 relative pl-8">
+                <div class="absolute left-0 top-2 bottom-2 hierarchy-line"></div>
+                
+                <div class="relative">
+                    <div class="absolute -left-[37px] w-4 h-4 rounded-full bg-yellow-500 border-4 border-black"></div>
+                    <h4 class="text-yellow-500 text-xs font-bold uppercase mb-2" data-az="Rəhbərlik" data-en="Top Management">Rəhbərlik</h4>
+                    <p class="text-sm text-zinc-400" data-az="Tapşırıqların verilməsi, prioritetləşdirmə və son təsdiq." data-en="Task assignment, prioritization, and final approval."></p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[37px] w-4 h-4 rounded-full bg-yellow-500/50 border-4 border-black"></div>
+                    <h4 class="text-white text-xs font-bold uppercase mb-2" data-az="Şöbə Rəhbərləri" data-en="Heads of Departments">Şöbə Rəhbərləri</h4>
+                    <p class="text-sm text-zinc-400" data-az="Sənədlərin kateqoriyalaşdırılması və şöbə daxili bölüşdürülmə." data-en="Categorization of documents and intra-departmental distribution."></p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[37px] w-4 h-4 rounded-full bg-yellow-500/20 border-4 border-black"></div>
+                    <h4 class="text-zinc-500 text-xs font-bold uppercase mb-2" data-az="Əməkdaşlar" data-en="Staff Members">Əməkdaşlar</h4>
+                    <p class="text-sm text-zinc-400" data-az="Sənədlərin icrası, hesabatların yüklənməsi və real-vaxt çatlaşma." data-en="Execution of documents, uploading reports, and real-time chat."></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal delay-200">
+            <div class="glass-card p-12 rounded-[3rem] border-l-8 border-l-yellow-500">
+                <h3 class="text-2xl font-syne uppercase mb-6" data-az="Sistem Arxitekturası" data-en="System Architecture">Sistem Arxitekturası</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed mb-8" data-az="Mərkəzləşdirilmiş baza sayəsində sənədlər şöbələr üzrə kateqoriyalara ayrılır. Deadline və status izləmə sistemi ilə bürokratik gecikmələr tamamilə aradan qaldırılıb." data-en="Documents are categorized by departments through a centralized database. Bureaucratic delays are eliminated with the deadline and status tracking system."></p>
+                <img src="../assets/images/Sened dovriyyesi.png" class="w-full opacity-60 hover:opacity-100 transition duration-500 rounded-xl" alt="Workflow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20">
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-10 rounded-[2.5rem] reveal">
+            <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center mb-8">
+                <i class="fas fa-comments text-yellow-500 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-syne mb-4 uppercase" data-az="Sənəd Üzrə Çat" data-en="Document Chat">Sənəd Üzrə Çat</h4>
+            <p class="text-sm text-zinc-500" data-az="Hər sənədin öz daxili müzakirə kanalı var. Bütün qeydlər tarixçədə saxlanılır." data-en="Each document has its own discussion channel. All notes are kept in the history logs."></p>
+        </div>
+
+        <div class="glass-card p-10 rounded-[2.5rem] reveal delay-100">
+            <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center mb-8">
+                <i class="fas fa-clock text-yellow-500 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-syne mb-4 uppercase" data-az="Deadline Control" data-en="Deadline Control">Deadline Control</h4>
+            <p class="text-sm text-zinc-500" data-az="Prioritetli sənədlər üçün avtomatik xatırlatmalar və gecikmə xəbərdarlıqları." data-en="Automatic reminders and delay alerts for high-priority documents."></p>
+        </div>
+
+        <div class="glass-card p-10 rounded-[2.5rem] reveal delay-200">
+            <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center mb-8">
+                <i class="fas fa-layer-group text-yellow-500 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-syne mb-4 uppercase" data-az="Kateqoriyalar" data-en="Categorization">Kateqoriyalar</h4>
+            <p class="text-sm text-zinc-500" data-az="Şöbələr üzrə avtomatik arxivləşdirmə və sürətli axtarış mexanizmi." data-en="Automatic archiving by departments and fast search mechanism."></p>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20 border-y border-white/5 bg-yellow-500">
+    <div class="grid md:grid-cols-4 gap-12 text-black">
+        <div class="reveal">
+            <h2 class="text-5xl font-syne font-extrabold">0%</h2>
+            <p class="text-[10px] uppercase tracking-widest font-bold opacity-60 mt-2" data-az="Kağız İstifadəsi" data-en="Paper Usage">Kağız İstifadəsi</p>
+        </div>
+        <div class="reveal delay-100">
+            <h2 class="text-5xl font-syne font-extrabold">24/7</h2>
+            <p class="text-[10px] uppercase tracking-widest font-bold opacity-60 mt-2" data-az="Uzaqdan Giriş" data-en="Remote Access">Uzaqdan Giriş</p>
+        </div>
+        <div class="reveal delay-200">
+            <h2 class="text-5xl font-syne font-extrabold">500+</h2>
+            <p class="text-[10px] uppercase tracking-widest font-bold opacity-60 mt-2" data-az="Aylıq Sənəd" data-en="Monthly Docs">Aylıq Sənəd</p>
+        </div>
+        <div class="reveal delay-300">
+            <h2 class="text-5xl font-syne font-extrabold">200+</h2>
+            <p class="text-[10px] uppercase tracking-widest font-bold opacity-60 mt-2" data-az="Bildirişlər" data-en="Notifications">istifadəçi</p>
+        </div>
+    </div>
+</section>
+
+<footer class="py-40 text-center reveal">
+    <a href="central-park.html" class="group">
+        <span class="text-[9px] uppercase tracking-[0.5em] text-zinc-500 group-hover:text-yellow-500 transition" data-az="NÖVBƏTİ LAYİHƏ" data-en="NEXT PROJECT">NÖVBƏTİ LAYİHƏ</span>
+        <h2 class="text-5xl md:text-8xl font-syne uppercase mt-8 group-hover:tracking-widest transition-all duration-700">Central Park →</h2>
+    </a>
+</footer>
+
+<script>
+    // Reveal Observer
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Language Toggle
+    function toggleLang(lang) {
+        document.querySelectorAll('[data-az]').forEach(el => {
+            const text = el.getAttribute('data-' + lang);
+            if(text) el.innerText = text;
+        });
+    }
+</script>
+
+</body>
+</html>
