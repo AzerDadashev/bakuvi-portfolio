@@ -183,40 +183,40 @@ const counterObserver = new IntersectionObserver((entries) => {
 counters.forEach(counter => counterObserver.observe(counter));
 
 
-// YENİ ZİYARƏTÇİ SAYĞACI (CountAPI.it istifadə edərək)
-async function updateVisitorCount() {
+function updateVisitorCount() {
     const counterEl = document.getElementById('visitor-count');
     if (!counterEl) return;
 
-    // Sənin unikal namespace-in
-    const namespace = 'bakuvistudio2026';
-    const key = 'visits';
+    // 1. Baza rəqəmi təyin edirik (Məsələn, saytın açıldığı gündən bəri olan təxmini rəqəm)
+    let baseCount = 0; 
 
-    try {
-        // Real API istəyi
-        const response = await fetch(`https://api.countapi.it/hit/${namespace}/${key}`);
-        const data = await response.json();
-        
-        if (data && data.value) {
-            const realTotal = data.value;
-            
-            // Rəqəmi atributa yazırıq ki, runCounter onu oxuya bilsin
-            counterEl.setAttribute('data-target', realTotal);
-            
-            // Animasiyanı başladırıq
-            if (typeof runCounter === "function") {
-                runCounter(counterEl);
-            } else {
-                counterEl.innerText = realTotal;
-            }
-        }
-    } catch (error) {
-        console.error("Sayğac xətası:", error);
-        // API işləməsə görünəcək ehtiyat rəqəm
-        counterEl.setAttribute('data-target', '1240');
-        if (typeof runCounter === "function") runCounter(counterEl);
+    // 2. LocalStorage-dən yoxlayırıq ki, rəqəm əvvəl saxlanılıb?
+    let currentCount = localStorage.getItem('site_visits');
+
+    if (!currentCount) {
+        // İlk dəfə girirsə baza rəqəmini təyin et
+        currentCount = baseCount;
+    } else {
+        // Hər girişdə rəqəmi 1 artır
+        currentCount = parseInt(currentCount) + 1;
+    }
+
+    // 3. Yeni rəqəmi yaddaşda saxla
+    localStorage.setItem('site_visits', currentCount);
+
+    // 4. Animasiya üçün hədəf rəqəmi təyin et
+    counterEl.setAttribute('data-target', currentCount);
+
+    // 5. Animasiyanı başlat
+    if (typeof runCounter === "function") {
+        runCounter(counterEl);
+    } else {
+        counterEl.innerText = currentCount;
     }
 }
+
+// Səhifə yüklənəndə işə sal
+window.addEventListener('DOMContentLoaded', updateVisitorCount);
 
 // Səhifə yüklənəndə işə sal
 window.addEventListener('load', updateVisitorCount);
