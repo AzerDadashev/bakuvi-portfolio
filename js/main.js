@@ -315,11 +315,6 @@ const playlistContainer = document.getElementById('playlist-container');
 const mainVideoFrame = document.getElementById('main-video-frame');
 const mainVideoTitle = document.getElementById('main-video-title');
 
-const FALLBACK_VIDEOS = [
-    { videoId: 'yjynoxsMwco', title: 'Sistem Arxitekturası Analizi', thumb: 'https://img.youtube.com/vi/yjynoxsMwco/mqdefault.jpg' },
-    { videoId: 'nsGl5-XfcQk', title: 'Azar İntro', thumb: 'https://img.youtube.com/vi/nsGl5-XfcQk/mqdefault.jpg' }
-];
-
 async function fetchPlaylist() {
     try {
         const feedUrl = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`);
@@ -338,12 +333,30 @@ async function fetchPlaylist() {
                 renderPlaylist(videos);
                 return;
             }
+
+            renderEmptyState('Kanalda hal-hazırda görünən video yoxdur.');
+            return;
         }
-        renderPlaylist(FALLBACK_VIDEOS);
+
+        renderEmptyState('YouTube kanalından video alınmadı.');
     } catch (err) {
-        console.warn("YouTube RSS fetch failed, using fallback list.", err);
-        renderPlaylist(FALLBACK_VIDEOS);
+        console.warn("YouTube RSS fetch failed.", err);
+        renderEmptyState('Video siyahısı yüklənmədi. Sonra yenidən yoxlayın.');
     }
+}
+
+function renderEmptyState(message) {
+    if (!playlistContainer) return;
+
+    playlistContainer.innerHTML = `
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 text-center text-sm text-white/70">
+            <p class="font-semibold mb-3 text-white">Video siyahısı mövcud deyil</p>
+            <p>${message}</p>
+        </div>
+    `;
+
+    if (mainVideoFrame) mainVideoFrame.src = '';
+    if (mainVideoTitle) mainVideoTitle.innerText = 'Kanalda video yoxdur';
 }
 
 function renderPlaylist(videos) {
