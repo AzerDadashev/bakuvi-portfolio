@@ -301,7 +301,7 @@ nav a {
     border-radius: 10px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #ff0000;
+    background: #ffffff;
 }
 
 /* Video Wrapper */
@@ -516,19 +516,9 @@ body:not(.light-mode) .dropdown-premium option {
     color: #ffffff;
 }
 
-/* Sosial Şəbəkələrin Brend Rəngləri */
-.social-box:hover.ig { background: #E1306C; color: white; border-color: #E1306C; }
-.social-box:hover.wa { background: #25D366; color: white; border-color: #25D366; }
-.social-box:hover.fb { background: #1877F2; color: white; border-color: #1877F2; }
-.social-box:hover.ln { background: #0077B5; color: white; border-color: #0077B5; }
-.social-box:hover.yt { background: #FF0000; color: white; border-color: #FF0000; }
-.social-box:hover.tg { background: #0088CC; color: white; border-color: #0088CC; }
-.social-box:hover.th { background: #000000; color: white; border-color: #000000; }
-.social-box:hover.gm { background: #DB4437; color: white; border-color: #DB4437; }
-
-/* White mode-da Threads (th) ağ modda qara, qara modda ağ olmalıdır */
-body.light-mode .social-box:hover.th { background: #000; color: #fff; }
-body:not(.light-mode) .social-box:hover.th { background: #fff; color: #000; border-color: #fff; }
+/* Monochrome sosial ikonlar — sayt ağ-qara temaya uyğunlaşdırılıb, marka rəngləri götürülüb */
+body:not(.light-mode) .social-box:hover { background: #fff; color: #000; border-color: #fff; }
+body.light-mode .social-box:hover { background: #000; color: #fff; border-color: #000; }
 
 /* Sosial ikonların hover hərəkəti */
 .social-box {
@@ -862,4 +852,177 @@ body.light-mode .back-to-top div:hover {
     .hero-title {
         font-size: 10vw !important; /* Mətni bir az kiçiltdik ki, videonun içinə sığsın */
     }
+}
+
+/* =========================================================
+   PREMIUM UPGRADE — B&W theme, creative loader, RU lang,
+   partners marquee, ecosystem collage, 3D depth
+   ========================================================= */
+
+/* --- Hard monochrome enforcement (kills leftover tint utilities) --- */
+.border-blue-500\/10, .border-blue-500\/40, .bg-blue-600\/5, .bg-blue-600\/10,
+.text-blue-400, .border-emerald-500\/10, .bg-emerald-500\/10, .border-emerald-500\/20,
+.text-emerald-500, .border-\[\#542E4E\]\/20 {
+    border-color: rgba(255,255,255,0.08) !important;
+    background-color: rgba(255,255,255,0.04) !important;
+    color: var(--text) !important;
+}
+
+/* --- New Logo Mark --- */
+.bakuvi-mark {
+    width: 34px;
+    height: 34px;
+    color: var(--text);
+    flex-shrink: 0;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo a { display: flex; align-items: center; gap: 10px; }
+
+/* =========================================================
+   CREATIVE LOADER
+   ========================================================= */
+#loader {
+    background: #060606;
+}
+
+.loader-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black 10%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle at center, black 10%, transparent 75%);
+    animation: loaderGridDrift 8s linear infinite;
+}
+
+@keyframes loaderGridDrift {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 40px 40px, 40px 40px; }
+}
+
+.loader-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 480px;
+    margin: -240px 0 0 -240px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.06);
+    animation: loaderSpin 12s linear infinite;
+}
+.loader-orbit::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+.loader-orbit.orbit-2 { width: 340px; height: 340px; margin: -170px 0 0 -170px; animation-duration: 8s; animation-direction: reverse; opacity: 0.5; }
+
+@keyframes loaderSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.loader-console {
+    font-family: 'Inter', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 28px;
+}
+
+.loader-console-line {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.5s ease;
+}
+.loader-console-line.is-visible { opacity: 1; transform: translateX(0); }
+.loader-console-line::before { content: '// '; color: rgba(255,255,255,0.2); }
+
+.loader-content-out { opacity: 0; transform: translateY(-10px); transition: all 0.5s ease; }
+
+/* =========================================================
+   PARTNERS MARQUEE
+   ========================================================= */
+.partners-strip {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    position: relative;
+    padding: 28px 0;
+}
+.partners-track {
+    display: flex;
+    gap: 64px;
+    width: max-content;
+    animation: marqueeScroll 32s linear infinite;
+}
+.partners-track span {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    opacity: 0.25;
+    white-space: nowrap;
+    transition: opacity 0.4s ease;
+}
+.partners-strip:hover .partners-track { animation-play-state: paused; }
+.partners-track span:hover { opacity: 1; }
+
+@keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* =========================================================
+   ECOSYSTEM COLLAGE COVERS (SVG-generated, monochrome)
+   ========================================================= */
+.eco-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.9;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease, opacity 0.6s ease;
+}
+.bento-item:hover .eco-cover { transform: scale(1.06); }
+.eco-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+}
+.eco-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: #fff; }
+
+/* =========================================================
+   3D DEPTH HELPERS
+   ========================================================= */
+.tilt-card { transform-style: preserve-3d; will-change: transform; }
+.bento-item { transform-style: preserve-3d; }
+
+/* =========================================================
+   RU / triple-language switcher
+   ========================================================= */
+#btn-ru { transition: opacity 0.3s ease; }
+
+@media (max-width: 768px) {
+    .partners-track span { font-size: 15px; }
 }

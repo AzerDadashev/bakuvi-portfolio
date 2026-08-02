@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakuvi | Portfolio</title>
+    <title>Bakuvi | Azər Dadaşev — IT Systems Architect</title>
+    <meta name="description" content="Azər Dadaşev — Bakuvi Solutions MMC təsisçisi və İT Sistemləri Memarı. HR, CRM, ERP, təhlükəsizlik və smart sistem həlləri.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-       <link rel="icon" type="image/png" href="assets/images/Gemini_Generated_Image_x6w4tfx6w4tfx6w4-removebg-preview.png">
-
-<link rel="apple-touch-icon" href="assets/images/Gemini_Generated_Image_x6w4tfx6w4tfx6w4-removebg-preview.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="assets/images/bakuvi-favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/bakuvi-favicon-192.png">
+<link rel="apple-touch-icon" href="assets/images/bakuvi-favicon-192.png">
 
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,22 +32,39 @@
     <div id="custom-cursor" class="hidden md:block"></div>
 
     <div id="loader" class="fixed inset-0 z-[1000] bg-[#0a0a0a] flex flex-col items-center justify-center overflow-hidden">
+    <div class="loader-grid"></div>
+    <div class="loader-orbit"></div>
+    <div class="loader-orbit orbit-2"></div>
+
     <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none pointer-events-none">
         <h2 class="text-[27vw] font-syne font-bold uppercase">AZAR Bakuvi</h2>
     </div>
 
-    <div class="relative z-10 text-center">
+    <div class="relative z-10 text-center px-4">
+        <svg class="bakuvi-mark mx-auto mb-6" style="width:52px;height:52px;" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M46 26 L46 94"/>
+            <path d="M46 26 H70 C82 26 82 46 70 48 H46"/>
+            <path d="M46 48 H74 C87 48 87 70 74 70 H46"/>
+            <circle cx="70" cy="48" r="4.5" fill="currentColor" stroke="none"/>
+        </svg>
+
         <div class="overflow-hidden mb-2">
             <h1 class="loader-title text-4xl md:text-6xl font-syne font-bold uppercase tracking-tighter text-white">
-                Bakuvi.STUDIO 2026
+                Bakuvi.SYSTEMS
             </h1>
         </div>
         <div class="flex items-center justify-center gap-4">
             <div id="loader-percentage" class="text-6xl md:text-8xl font-syne font-light text-white italic">00</div>
             <div class="h-12 w-[1px] bg-white/20"></div>
             <div class="text-left text-[10px] uppercase tracking-[0.3em] text-gray-500 leading-tight">
-                Creativity<br>Loading
+                Sistem<br>Qurulur
             </div>
+        </div>
+
+        <div class="loader-console">
+            <div class="loader-console-line">init bakuvi.core</div>
+            <div class="loader-console-line">compiling architecture layers</div>
+            <div class="loader-console-line">rendering experience</div>
         </div>
     </div>
 
@@ -57,22 +75,32 @@
 
     <nav class="fixed top-0 w-full z-[100] px-6 md:px-20 py-8 flex justify-between items-center mix-blend-difference">
     <div class="nav-logo text-lg font-syne font-bold uppercase tracking-tighter">
-        <a href="#hero">AZAR Bakuvi</a>
+        <a href="#hero">
+            <svg class="bakuvi-mark" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M46 26 L46 94"/>
+                <path d="M46 26 H70 C82 26 82 46 70 48 H46"/>
+                <path d="M46 48 H74 C87 48 87 70 74 70 H46"/>
+                <circle cx="70" cy="48" r="5" fill="currentColor" stroke="none"/>
+            </svg>
+            <span data-az="Bakuvi" data-en="Bakuvi" data-ru="Bakuvi">Bakuvi</span>
+        </a>
     </div>
     
     <div class="flex items-center gap-8">
         <div class="nav-links hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-medium">
-            <a href="#about" class="hover:opacity-50 transition-all" data-az="Haqqımda" data-en="About">Haqqımda</a>
-            <a href="#experience" class="hover:opacity-50 transition-all" data-az="Təcrübə" data-en="Experience">Təcrübə</a>
-            <a href="#journal" class="hover:opacity-50 transition-all" data-az="Keyslər" data-en="Cases">Keyslər</a>
-            <a href="#videos" class="hover:opacity-50 transition-all" data-az="Video" data-en="Videos">Video</a>
-            <a href="#contact" class="hover:opacity-50 transition-all" data-az="Əlaqə" data-en="Contact">Əlaqə</a>
+            <a href="#about" class="hover:opacity-50 transition-all" data-az="Haqqımda" data-en="About" data-ru="Обо мне">Haqqımda</a>
+            <a href="#experience" class="hover:opacity-50 transition-all" data-az="Təcrübə" data-en="Experience" data-ru="Опыт">Təcrübə</a>
+            <a href="#journal" class="hover:opacity-50 transition-all" data-az="Keyslər" data-en="Cases" data-ru="Кейсы">Keyslər</a>
+            <a href="#videos" class="hover:opacity-50 transition-all" data-az="Video" data-en="Videos" data-ru="Видео">Video</a>
+            <a href="#contact" class="hover:opacity-50 transition-all" data-az="Əlaqə" data-en="Contact" data-ru="Контакт">Əlaqə</a>
         </div>
         
         <div class="flex gap-2 text-[10px] font-bold border border-white/20 rounded-full px-4 py-1.5 bg-white/5 backdrop-blur-md">
             <button onclick="changeLang('az')" class="lang-btn hover:text-white transition-colors" id="btn-az">AZ</button>
             <span class="opacity-20">|</span>
             <button onclick="changeLang('en')" class="lang-btn opacity-40 hover:text-white transition-colors" id="btn-en">EN</button>
+            <span class="opacity-20">|</span>
+            <button onclick="changeLang('ru')" class="lang-btn opacity-40 hover:text-white transition-colors" id="btn-ru">RU</button>
         </div>
 
         <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 z-[110] relative focus:outline-none">
@@ -84,15 +112,23 @@
 
 <div id="mobile-menu" class="fixed inset-0 z-[90] bg-[#0a0a0a] flex flex-col items-center justify-center translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)]">
     <div class="flex flex-col items-center space-y-8 text-center">
-        <a href="#about" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Haqqımda" data-en="About">Haqqımda</a>
-        <a href="#experience" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Təcrübə" data-en="Experience">Təcrübə</a>
-        <a href="#journal" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Keyslər" data-en="Cases">Keyslər</a>
-        <a href="#videos" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Video" data-en="Videos">Video</a>
-        <a href="#contact" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Əlaqə" data-en="Contact">Əlaqə</a>
+        <a href="#about" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Haqqımda" data-en="About" data-ru="Обо мне">Haqqımda</a>
+        <a href="#experience" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Təcrübə" data-en="Experience" data-ru="Опыт">Təcrübə</a>
+        <a href="#journal" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Keyslər" data-en="Cases" data-ru="Кейсы">Keyslər</a>
+        <a href="#videos" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Video" data-en="Videos" data-ru="Видео">Video</a>
+        <a href="#contact" class="mobile-link text-4xl font-syne font-bold uppercase tracking-tighter hover:italic transition-all" data-az="Əlaqə" data-en="Contact" data-ru="Контакт">Əlaqə</a>
+
+        <div class="flex gap-3 text-xs font-bold border border-white/20 rounded-full px-5 py-2 mt-4">
+            <button onclick="changeLang('az')" class="lang-btn hover:text-white transition-colors" id="btn-az-m" data-mirror="btn-az">AZ</button>
+            <span class="opacity-20">|</span>
+            <button onclick="changeLang('en')" class="lang-btn opacity-40 hover:text-white transition-colors" id="btn-en-m" data-mirror="btn-en">EN</button>
+            <span class="opacity-20">|</span>
+            <button onclick="changeLang('ru')" class="lang-btn opacity-40 hover:text-white transition-colors" id="btn-ru-m" data-mirror="btn-ru">RU</button>
+        </div>
     </div>
     
     <div class="absolute bottom-12 text-[10px] uppercase tracking-widest opacity-30">
-        Bakuvi Studio &copy; 2026
+        Bakuvi Solutions &copy; 2026
     </div>
 </div>
 <style>
@@ -164,14 +200,16 @@ mobileLinks.forEach(link => {
     
     <div class="absolute z-10 text-center px-4 reveal">
         <p class="text-[8px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.8em] mb-2 md:mb-6 opacity-60"
-           data-az="Sistem Arxitekturası · IT Analitika · Texniki İcra"
-           data-en="System Architecture · IT Analysis · Technical Execution">
-           Sistem Arxitekturası · IT Analitika · Texniki İcra
+           data-az="Bakuvi Solutions · Sistem Arxitekturası · Süni İntellekt"
+           data-en="Bakuvi Solutions · System Architecture · Artificial Intelligence"
+           data-ru="Bakuvi Solutions · Архитектура систем · Искусственный интеллект">
+           Bakuvi Solutions · Sistem Arxitekturası · Süni İntellekt
         </p>
         <h2 class="text-[8vw] md:text-[7vw] font-syne uppercase font-extrabold leading-[0.9] tracking-tighter" 
-            data-az="Kodla Yazılan <br> Yaradıcılıq" 
-            data-en="Creativity <br> Written in Code"> 
-            Kodla Yazılan <br> Yaradıcılıq 
+            data-az="Xaosdan <br> Sistem Qururam" 
+            data-en="I Build <br> Order From Chaos"
+            data-ru="Строю системы <br> из хаоса"> 
+            Xaosdan <br> Sistem Qururam
         </h2>
     </div>
 </section>
@@ -179,36 +217,48 @@ mobileLinks.forEach(link => {
       <section id="about" class="relative min-h-screen py-32 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between overflow-hidden">
     <div class="md:w-1/2 mb-20 md:mb-0 reveal">
         <h3 class="text-5xl md:text-7xl font-syne font-bold leading-tight uppercase">
-            <span data-az="Azər Dadaşev" data-en="Azar Dadashev">Azər Dadaşev</span>
+            <span data-az="Azər Dadaşev" data-en="Azar Dadashev" data-ru="Азер Дадашев">Azər Dadaşev</span>
             <br>
             <span class="opacity-20 italic font-light tracking-tighter text-4xl"
-                data-az="İT Sistemləri Memarı" data-en="IT Systems Architect">
-                İT Sistemləri Memarı
+                data-az="Bakuvi Solutions MMC — Təsisçi & İT Sistemləri Memarı" data-en="Founder & IT Systems Architect, Bakuvi Solutions"
+                data-ru="Основатель и архитектор ИТ-систем, Bakuvi Solutions">
+                Bakuvi Solutions MMC — Təsisçi & İT Sistemləri Memarı
             </span>
         </h3>
 
         <p class="mt-8 max-w-md opacity-70 leading-relaxed text-sm"
-            data-az="Qərbi Kaspi Universitetində IT mütəxəssisi olaraq, biznes tələblərini texniki həllərə çevirən sistemlər qururam. IT Business Analizi, veb platformaların hazırlanması, təhlükəsizlik sistemləri (Hikvision kamera, turniket və access control), eləcə də texniki sənədləşmə sahələrində çalışıram."
-            data-en="As an IT specialist at Western Caspian University, I design systems that translate business requirements into technical solutions. My work spans IT Business Analysis, web platform development, security systems, and technical documentation.">
-            Qərbi Kaspi Universitetində IT mütəxəssisi olaraq, biznes tələblərini texniki həllərə çevirən sistemlər qururam.
+            data-az="Bakuvi Solutions MMC-nin təsisçisi olaraq, biznes tələblərini etibarlı texniki sistemlərə çevirirəm. Qərbi Kaspi Universitetində komputer mühəndisliyini (ingilis dilində) bitirmiş, orada İT mütəxəssisi kimi çalışmışam; hazırda Azərbaycan Texniki Universitetində süni intellekt ixtisası üzrə (türk dilində) təhsilimi davam etdirirəm. ZKTeco, Hikvision və Dahua brendlərinin, ABB, Prolink, Technovision və Avisec şirkətlərinin tərəfdaşı olaraq HR, CRM, ERP, bilet, rent-a-car, QR-menyu, otel və restoran platformaları, mobil tətbiqlər, təhlükəsizlik həlləri, media/SMM xidmətləri və kamera/biometrik avadanlıqların qurulması sahələrində layihələr həyata keçirirəm."
+            data-en="As founder of Bakuvi Solutions, I turn business requirements into reliable technical systems. I hold a Computer Engineering degree (English-taught) from Western Caspian University, where I later worked as an IT specialist, and I'm currently studying Artificial Intelligence (Turkish-taught) at Azerbaijan Technical University. As a partner of brands like ZKTeco, Hikvision and Dahua, and companies like ABB, Prolink, Technovision and Avisec, I deliver HR, CRM, ERP, ticketing, rent-a-car, QR-menu, hotel and restaurant platforms, mobile apps, security solutions, media/SMM services, and camera/biometric hardware installations."
+            data-ru="Как основатель Bakuvi Solutions, я превращаю бизнес-требования в надёжные технические системы. Я получил степень по компьютерной инженерии (на английском) в Университете Западного Каспия, где позже работал ИТ-специалистом, а сейчас изучаю искусственный интеллект (на турецком) в Азербайджанском техническом университете. Как партнёр брендов ZKTeco, Hikvision и Dahua, а также компаний ABB, Prolink, Technovision и Avisec, я реализую HR, CRM, ERP, тикет-системы, rent-a-car, QR-меню, сайты отелей и ресторанов, мобильные приложения, решения безопасности, медиа/SMM-услуги и установку камер/биометрического оборудования.">
+            Bakuvi Solutions MMC-nin təsisçisi olaraq, biznes tələblərini etibarlı texniki sistemlərə çevirirəm.
         </p>
+
+        <div class="flex flex-wrap gap-2 mt-6">
+            <span class="text-[9px] uppercase tracking-widest px-3 py-1.5 border border-white/10 rounded-full opacity-50">BEOC</span>
+            <span class="text-[9px] uppercase tracking-widest px-3 py-1.5 border border-white/10 rounded-full opacity-50">Besting</span>
+            <span class="text-[9px] uppercase tracking-widest px-3 py-1.5 border border-white/10 rounded-full opacity-50">Western Caspian University</span>
+            <span class="text-[9px] uppercase tracking-widest px-3 py-1.5 border border-white/10 rounded-full opacity-50">Faiqoğlu MMC</span>
+        </div>
 
         <div class="grid grid-cols-3 gap-6 mt-16 border-t border-white/5 pt-10">
             <div class="counter-box">
     <span id="visitor-count" class="counter-num visitor-count text-4xl font-syne font-bold block" data-target="0">0</span>
-    <span class="text-[9px] uppercase tracking-widest opacity-40" data-az="Ziyarətçilər" data-en="Site Visitors">Ziyarətçilər</span>
+    <span class="text-[9px] uppercase tracking-widest opacity-40" data-az="Ziyarətçilər" data-en="Site Visitors" data-ru="Посетители">Ziyarətçilər</span>
 </div>
             <div class="counter-box">
                 <span class="counter-num text-4xl font-syne font-bold block" data-target="48">0</span>
-                <span class="text-[9px] uppercase tracking-widest opacity-40" data-az="Uğurlu Layihə" data-en="Projects Done">Uğurlu Layihə</span>
+                <span class="text-[9px] uppercase tracking-widest opacity-40" data-az="Uğurlu Layihə" data-en="Projects Done" data-ru="Проектов">Uğurlu Layihə</span>
             </div>
             <div class="counter-box">
                 <span class="counter-num text-4xl font-syne font-bold block" data-target="99">0</span>
-                <span class="text-[9px] uppercase tracking-widest opacity-40" data-az="Sistem Optimizasiyası" data-en="System Optimization">Sistem Optimizasiyası</span>
+                <span class="text-[9px] uppercase tracking-widest opacity-40" data-az="Sistem Optimizasiyası" data-en="System Optimization" data-ru="Оптимизация систем">Sistem Optimizasiyası</span>
             </div>
         </div>
-        <span class="text-[8px] opacity-30 mt-1 block">
-  Verified via Analytics
+        <span class="text-[8px] opacity-30 mt-1 block"
+              data-az="Real-time — hər ziyarətdə canlı yenilənir"
+              data-en="Real-time — updates live on every visit"
+              data-ru="В реальном времени — обновляется при каждом посещении">
+  Real-time — hər ziyarətdə canlı yenilənir
 </span>
 
     </div>
@@ -231,12 +281,20 @@ mobileLinks.forEach(link => {
 </section>
 <div class="noise-overlay"></div>
 
+<section class="partners-strip">
+    <div class="partners-track">
+        <span>ZKTeco</span><span>Hikvision</span><span>Dahua</span><span>ABB</span><span>Prolink</span><span>Technovision</span><span>Avisec</span>
+        <span>ZKTeco</span><span>Hikvision</span><span>Dahua</span><span>ABB</span><span>Prolink</span><span>Technovision</span><span>Avisec</span>
+    </div>
+</section>
+
 <section id="experience" class="py-32 px-6 md:px-20 relative border-b border-white/5">
     <div class="max-w-7xl mx-auto">
 
         <h2 class="text-[10px] uppercase tracking-[0.5em] mb-20 opacity-40 reveal"
             data-az="Peşəkar Təcrübə Yol Xəritəsi"
-            data-en="Professional Experience Roadmap">
+            data-en="Professional Experience Roadmap"
+            data-ru="Карта профессионального опыта">
             Peşəkar Təcrübə Yol Xəritəsi
         </h2>
         
@@ -245,21 +303,24 @@ mobileLinks.forEach(link => {
 
             <!-- STEP 1 -->
             <div class="timeline-item reveal">
-                <div class="timeline-content">
+                <div class="timeline-content tilt-card">
                     <span class="text-[10px] opacity-40 uppercase tracking-widest">2019 — 2021</span>
                     <h4 class="text-xl font-syne font-bold mt-2"
                         data-az="Texniki Dəstək & Sistem Əsasları"
-                        data-en="Technical Support & System Fundamentals">
+                        data-en="Technical Support & System Fundamentals"
+                        data-ru="Техподдержка и основы систем">
                         Texniki Dəstək & Sistem Əsasları
                     </h4>
                     <p class="text-xs text-zinc-400 mt-1"
                         data-az="Praktiki İT əməliyyatları"
-                        data-en="Hands-on IT Operations">
+                        data-en="Hands-on IT Operations"
+                        data-ru="Практические ИТ-операции">
                         Praktiki İT əməliyyatları
                     </p>
                     <p class="mt-4 text-sm opacity-60 leading-relaxed"
-                       data-az="İstifadəçi səviyyəsində texniki problemlərin həlli, hardware və software konfiqurasiyası, lokal şəbəkə anlayışları və real mühitdə sistem məntiqinin formalaşdırılması. Bu mərhələ praktiki düşüncə və texniki intizamın əsasını qoydu."
-                       data-en="Resolving user-level technical issues, hardware and software configuration, local network fundamentals, and developing system logic in real environments. This stage established practical thinking and technical discipline.">
+                       data-az="İstifadəçi səviyyəsində texniki problemlərin həlli, hardware və software konfiqurasiyası, lokal şəbəkə anlayışları və real mühitdə sistem məntiqinin formalaşdırılması."
+                       data-en="Resolving user-level technical issues, hardware and software configuration, local network fundamentals, and developing system logic in real environments."
+                       data-ru="Решение технических проблем на уровне пользователя, настройка оборудования и ПО, основы локальных сетей и формирование системной логики в реальной среде.">
                        İstifadəçi səviyyəsində texniki problemlərin həlli.
                     </p>
                 </div>
@@ -269,21 +330,24 @@ mobileLinks.forEach(link => {
 
             <!-- STEP 2 -->
             <div class="timeline-item reveal flex-row-reverse">
-                <div class="timeline-content">
+                <div class="timeline-content tilt-card">
                     <span class="text-[10px] opacity-40 uppercase tracking-widest">2021 — 2023</span>
                     <h4 class="text-xl font-syne font-bold mt-2"
                         data-az="Proqram Təminatı & Rəqəmsal Həllər"
-                        data-en="Software Development & Digital Solutions">
+                        data-en="Software Development & Digital Solutions"
+                        data-ru="Разработка ПО и цифровые решения">
                         Proqram Təminatı & Rəqəmsal Həllər
                     </h4>
                     <p class="text-xs text-zinc-400 mt-1"
                         data-az="Müstəqil layihələr"
-                        data-en="Independent Projects">
+                        data-en="Independent Projects"
+                        data-ru="Независимые проекты">
                         Müstəqil layihələr
                     </p>
                     <p class="mt-4 text-sm opacity-60 leading-relaxed text-right md:text-left"
-                       data-az="Veb saytlar, idarəetmə panelləri və xüsusi proqram təminatlarının hazırlanması. Frontend və Backend texnologiyalarının inteqrasiyası, istifadəçi tələblərinin analizi və funksional, miqyaslana bilən sistemlərin qurulması."
-                       data-en="Development of websites, dashboards, and custom software solutions. Integration of frontend and backend technologies, requirement analysis, and building functional, scalable systems.">
+                       data-az="Veb saytlar, idarəetmə panelləri və xüsusi proqram təminatlarının hazırlanması. Frontend və Backend texnologiyalarının inteqrasiyası, funksional, miqyaslana bilən sistemlərin qurulması."
+                       data-en="Development of websites, dashboards, and custom software solutions. Integration of frontend and backend technologies, and building functional, scalable systems."
+                       data-ru="Разработка сайтов, панелей управления и индивидуального ПО. Интеграция фронтенд- и бэкенд-технологий, создание функциональных, масштабируемых систем.">
                        Veb saytlar və xüsusi proqram təminatlarının hazırlanması.
                     </p>
                 </div>
@@ -293,21 +357,24 @@ mobileLinks.forEach(link => {
 
             <!-- STEP 3 -->
             <div class="timeline-item reveal">
-                <div class="timeline-content">
-                    <span class="text-[10px] opacity-40 uppercase tracking-widest">2023 — Present</span>
+                <div class="timeline-content tilt-card">
+                    <span class="text-[10px] opacity-40 uppercase tracking-widest">2023 — 2025</span>
                     <h4 class="text-xl font-syne font-bold mt-2"
-                        data-az="İT Sistemləri & İnfrastruktur"
-                        data-en="IT Systems & Infrastructure">
-                        İT Sistemləri & İnfrastruktur
+                        data-az="İT Mütəxəssisi — İT Sistemləri & İnfrastruktur"
+                        data-en="IT Specialist — Systems & Infrastructure"
+                        data-ru="ИТ-специалист — системы и инфраструктура">
+                        İT Mütəxəssisi — İT Sistemləri & İnfrastruktur
                     </h4>
                     <p class="text-xs text-zinc-400 mt-1"
-                        data-az="Western Caspian University"
-                        data-en="Western Caspian University">
-                        Western Caspian University
+                        data-az="Qərbi Kaspi Universiteti"
+                        data-en="Western Caspian University"
+                        data-ru="Университет Западного Каспия">
+                        Qərbi Kaspi Universiteti
                     </p>
                     <p class="mt-4 text-sm opacity-60 leading-relaxed"
-                       data-az="Universitetin İT infrastrukturunun idarə olunması, şəbəkə və server mühitləri, təhlükəsizlik sistemləri (Hikvision CCTV, turniket və giriş-çıxış nəzarəti). Texniki dokumentasiya, daxili proseslərin optimallaşdırılması və dayanıqlı sistemlərin qurulması."
-                       data-en="Managing university IT infrastructure, network and server environments, and security systems (Hikvision CCTV, turnstiles, access control). Technical documentation, process optimization, and building resilient systems.">
+                       data-az="Universitetin İT infrastrukturunun idarə olunması, şəbəkə və server mühitləri, təhlükəsizlik sistemləri (Hikvision CCTV, turniket və giriş-çıxış nəzarəti). Texniki dokumentasiya və dayanıqlı sistemlərin qurulması."
+                       data-en="Managed university IT infrastructure, network and server environments, and security systems (Hikvision CCTV, turnstiles, access control). Technical documentation and building resilient systems."
+                       data-ru="Управление ИТ-инфраструктурой университета, сетевой и серверной средой, системами безопасности (Hikvision CCTV, турникеты, контроль доступа). Техническая документация и построение отказоустойчивых систем.">
                        Universitetin İT infrastrukturunun idarə olunması.
                     </p>
                 </div>
@@ -317,21 +384,24 @@ mobileLinks.forEach(link => {
 
             <!-- STEP 4 -->
             <div class="timeline-item reveal flex-row-reverse">
-                <div class="timeline-content">
+                <div class="timeline-content tilt-card">
                     <span class="text-[10px] opacity-40 uppercase tracking-widest">Current Focus</span>
                     <h4 class="text-xl font-syne font-bold mt-2"
-                        data-az="Sistem Arxitekturası & Biznes Analizi"
-                        data-en="System Architecture & Business Analysis">
-                        Sistem Arxitekturası & Biznes Analizi
+                        data-az="Bakuvi Solutions MMC — Təsisçi & Memarı"
+                        data-en="Founder & Architect, Bakuvi Solutions"
+                        data-ru="Основатель и архитектор, Bakuvi Solutions">
+                        Bakuvi Solutions MMC — Təsisçi & Memarı
                     </h4>
                     <p class="text-xs text-zinc-400 mt-1"
-                        data-az="Strateji mərhələ"
-                        data-en="Strategic Layer">
-                        Strateji mərhələ
+                        data-az="Paralel olaraq: Azərbaycan Texniki Universiteti — Süni İntellekt (türk dilində)"
+                        data-en="In parallel: Azerbaijan Technical University — Artificial Intelligence (Turkish-taught)"
+                        data-ru="Параллельно: Азербайджанский технический университет — искусственный интеллект (на турецком)">
+                        Azərbaycan Texniki Universiteti — Süni İntellekt
                     </p>
                     <p class="mt-4 text-sm opacity-60 leading-relaxed text-right md:text-left"
-                       data-az="Biznes tələblərinin texniki həllərə çevrilməsi, kompleks sistemlərin dizaynı, uzunmüddətli texnoloji yol xəritələrinin hazırlanması. AI əsaslı və ağıllı platformaların qurulmasına fokus."
-                       data-en="Translating business requirements into technical solutions, designing complex system architectures, and building long-term technology roadmaps. Focus on AI-driven and intelligent platforms.">
+                       data-az="Bakuvi Solutions MMC-ni quraraq HR, CRM, ERP, təhlükəsizlik və smart sistemlər üzrə tam dövrəli həllər təqdim edirəm. ZKTeco, Hikvision, Dahua və digər tərəfdaşlarla biznesi texnologiyaya, texnologiyanı isə nəticəyə bağlayan strateji körpü qururam."
+                       data-en="Having founded Bakuvi Solutions, I deliver full-cycle HR, CRM, ERP, security and smart-system solutions. Together with partners like ZKTeco, Hikvision and Dahua, I build the strategic bridge connecting business to technology, and technology to results."
+                       data-ru="Основав Bakuvi Solutions, я предоставляю комплексные решения HR, CRM, ERP, безопасности и умных систем. Вместе с партнёрами ZKTeco, Hikvision и Dahua я выстраиваю стратегический мост между бизнесом и технологиями.">
                        Biznes və texnologiya arasında strateji körpü.
                     </p>
                 </div>
@@ -346,31 +416,42 @@ mobileLinks.forEach(link => {
 
         <section class="py-24 px-6 md:px-20 bg-[#050505] text-white">
     <div class="max-w-7xl mx-auto mb-16 reveal">
-        <span class="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-4 block">Portfolio 2026</span>
-        <h2 class="text-5xl md:text-7xl font-syne font-bold leading-none uppercase italic">
+        <span class="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-4 block">Bakuvi Solutions MMC</span>
+        <h2 class="text-5xl md:text-7xl font-syne font-bold leading-none uppercase italic"
+            data-az='Rəqəmsal <br> <span class="text-zinc-700">Ekosistemlər</span>'
+            data-en='Digital <br> <span class="text-zinc-700">Ecosystems</span>'
+            data-ru='Цифровые <br> <span class="text-zinc-700">Экосистемы</span>'>
             Rəqəmsal <br> <span class="text-zinc-700">Ekosistemlər</span>
         </h2>
     </div>
 
     <div class="bento-grid max-w-7xl mx-auto">
-        
-        <div class="bento-item item-1 reveal clickable-img group border-blue-500/10 hover:border-blue-500/40">
-            <div class="absolute inset-0 z-0 bg-blue-600/5 group-hover:bg-blue-600/10 transition-colors"></div>
-            <img src="assets/images/logo-ITfix.png" class="opacity-80 group-hover:opacity-100 transition-opacity" alt="ITFixBot">
-            <div class="bento-content">
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="w-8 h-[1px] bg-blue-500"></span>
-                    <span class="text-[10px] tracking-widest text-blue-400 uppercase">Automation</span>
+
+        <!-- Flagship collage tile: layered real Bakuvi Solutions screenshots -->
+        <div class="bento-item item-1 reveal group border-white/5 hover:border-white/20 overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-90">
+                <img src="assets/images/dashboard.png" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" alt="Bakuvi Ecosystem">
+            </div>
+            <img src="assets/images/report.png" class="absolute w-[55%] bottom-6 right-6 rounded-xl border border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 z-[1]" alt="ERP Kassa">
+            <img src="assets/images/zkt-dashboard.png" class="absolute w-[38%] top-8 left-8 rounded-xl border border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 z-[1]" alt="Biometric System">
+            <div class="absolute inset-0 z-[2] bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+            <div class="bento-content z-[3]">
+                <div class="eco-tag mb-4"><span class="dot"></span>
+                    <span data-az="Tam Ekosistem" data-en="Full Ecosystem" data-ru="Полная экосистема">Tam Ekosistem</span>
                 </div>
-                <h3 class="text-3xl font-syne font-bold uppercase tracking-tighter">ITFixBot</h3>
+                <h3 class="text-3xl font-syne font-bold uppercase tracking-tighter">Bakuvi Solutions</h3>
+                <p class="text-xs text-zinc-400 mt-2 font-light"
+                   data-az="HR · ERP · Kassa · Biometrika — bir platformada"
+                   data-en="HR · ERP · POS · Biometrics — one platform"
+                   data-ru="HR · ERP · Касса · Биометрия — одна платформа">HR · ERP · Kassa · Biometrika</p>
             </div>
         </div>
 
         <div class="bento-item item-2 reveal clickable-img group border-white/5 hover:border-white/20">
-            <img src="assets/images/sened.png" class="grayscale group-hover:grayscale-0 transition-all duration-700" alt="Document System">
+            <img src="assets/images/HR system.png" class="grayscale group-hover:grayscale-0 transition-all duration-700" alt="HR System">
             <div class="bento-content bg-gradient-to-t from-black/90 to-transparent">
-                <h3 class="text-xl font-syne uppercase">Sənəd Dövriyyəsi</h3>
-                <p class="text-xs text-zinc-500 mt-2 font-light">E-Government Standard Solutions</p>
+                <h3 class="text-xl font-syne uppercase" data-az="HR Davamiyyət Sistemi" data-en="HR Attendance System" data-ru="HR-система учёта">HR Davamiyyət Sistemi</h3>
+                <p class="text-xs text-zinc-500 mt-2 font-light">Bakuvi Solutions MMC</p>
             </div>
         </div>
 
@@ -378,33 +459,34 @@ mobileLinks.forEach(link => {
             <div class="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center">
                 <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
             </div>
-            <p class="text-2xl font-syne font-medium leading-tight tracking-tight">
+            <p class="text-2xl font-syne font-medium leading-tight tracking-tight"
+               data-az='"Dizayn sadəcə görünüş deyil, <span class="text-zinc-500 italic">necə işlədiyidir.</span>"'
+               data-en='"Design isn&#39;t just how it looks, <span class="text-zinc-500 italic">it&#39;s how it works.</span>"'
+               data-ru='"Дизайн — это не то, как выглядит, <span class="text-zinc-500 italic">а то, как работает.</span>"'>
                 "Dizayn sadəcə görünüş deyil, <span class="text-zinc-500 italic">necə işlədiyidir.</span>"
             </p>
-            <div class="text-[10px] uppercase tracking-widest text-zinc-600">— Minimalist Craft</div>
+            <div class="text-[10px] uppercase tracking-widest text-zinc-600">— Bakuvi Solutions</div>
         </div>
 
-        <div class="bento-item item-4 reveal clickable-img group border-emerald-500/10">
-            <img src="assets/images/HR system.png" alt="HR System">
+        <div class="bento-item item-4 reveal clickable-img group border-white/5">
+            <img src="assets/images/Hotel-1.png" class="grayscale group-hover:grayscale-0 transition-all duration-700" alt="Central Park Hotel">
             <div class="absolute top-6 right-6">
-                <div class="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-xl flex items-center justify-center">
-                    <i class="fas fa-fingerprint text-emerald-500 text-xs"></i>
+                <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center">
+                    <i class="fas fa-hotel text-white text-xs"></i>
                 </div>
             </div>
             <div class="bento-content">
-                <h3 class="text-lg font-syne uppercase tracking-widest">HR System</h3>
+                <h3 class="text-lg font-syne uppercase tracking-widest">Central Park Hotel</h3>
             </div>
         </div>
 
-        <div class="bento-item item-5 reveal p-8 flex flex-col justify-end bg-gradient-to-br from-[#1a0b16] to-[#050505] border-[#542E4E]/20">
-            <div class="mb-auto">
-                <img src="assets/images/Hotel-2.png" class="h-6 opacity-30" alt="WCU">
+        <div class="bento-item item-5 reveal clickable-img group border-white/5">
+            <img src="assets/images/dashboard-itfix.png" class="grayscale group-hover:grayscale-0 transition-all duration-700" alt="ERP Kassa System">
+            <div class="bento-content bg-gradient-to-t from-black/90 to-transparent">
+                <h4 class="text-lg font-syne font-bold text-zinc-200 uppercase leading-tight" data-az="ERP · Kassa Sistemi" data-en="ERP · POS System" data-ru="ERP · Кассовая система">ERP · Kassa Sistemi</h4>
+                <p class="text-[9px] text-zinc-600 mt-2 tracking-[0.2em]">Bakuvi Solutions MMC</p>
             </div>
-            <h4 class="text-lg font-syne font-bold text-zinc-300 uppercase leading-tight">İT İnfrastruktur <br> Strategiyası</h4>
-            <p class="text-[9px] text-zinc-600 mt-4 tracking-[0.2em]">Enterprise Networking</p>
         </div>
-
-        
 
     </div>
 </section>
@@ -422,26 +504,37 @@ mobileLinks.forEach(link => {
     <img src="" alt="Preview">
   </div>
 
-  <!-- Header -->
-  <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 reveal">
+  <!-- Header + collage -->
+  <div class="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20 reveal">
     <div>
       <h2 class="text-xs uppercase tracking-widest opacity-40 mb-2"
           data-az="Texniki qeydlər"
-          data-en="Technical Notes">
+          data-en="Technical Notes"
+          data-ru="Технические заметки">
         Texniki qeydlər
       </h2>
 
       <h3 class="text-4xl md:text-6xl font-syne font-bold uppercase"
           data-az="İT İş Jurnalı"
-          data-en="IT Case Journal">
+          data-en="IT Case Journal"
+          data-ru="ИТ-журнал кейсов">
         İT İş Jurnalı 
       </h3>
+
+      <p class="text-[10px] uppercase tracking-widest opacity-30 mt-4 max-w-xs"
+         data-az="Bakuvi Solutions ekosistemindən seçilmiş həllər"
+         data-en="Selected solutions from the Bakuvi Solutions ecosystem"
+         data-ru="Избранные решения из экосистемы Bakuvi Solutions">
+        Bakuvi Solutions ekosistemindən seçilmiş həllər
+      </p>
     </div>
 
-    <div class="text-[10px] uppercase tracking-widest opacity-30"
-    data-az="Universitet və Müəssisə Sistemləri"
-    data-en="University & Enterprise Systems">>
-      University & Enterprise Systems
+    <!-- Mini collage of ecosystem shots, tying journal to real systems -->
+    <div class="hidden lg:grid grid-cols-3 gap-3 w-[340px] shrink-0">
+        <img src="assets/images/HR system.png" class="col-span-2 h-24 w-full object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500" alt="HR">
+        <img src="assets/images/zkt-dashboard.png" class="h-24 w-full object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500" alt="Biometric">
+        <img src="assets/images/Hotel-3.png" class="h-24 w-full object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500" alt="Hotel">
+        <img src="assets/images/report.png" class="col-span-2 h-24 w-full object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500" alt="ERP">
     </div>
   </div>
 
@@ -451,7 +544,7 @@ mobileLinks.forEach(link => {
     <!-- ITFixBot -->
     <a href="cases/itfixbot.html"
        class="blog-item py-12 flex flex-col md:flex-row justify-between items-start md:items-center group relative"
-       data-img="assets/images/itfixbot_cover.jpg">
+       data-img="assets/images/itfix-1.png">
 
       <div class="flex items-start md:items-center gap-6 md:gap-16">
         <span class="text-sm opacity-20 font-syne">01</span>
@@ -459,19 +552,22 @@ mobileLinks.forEach(link => {
         <div>
           <h3 class="text-2xl md:text-5xl font-syne uppercase transition-all duration-500"
               data-az="ITFixBot: Avtomatlaşdırılmış İT Dəstək"
-              data-en="ITFixBot: Automated IT Support">
+              data-en="ITFixBot: Automated IT Support"
+              data-ru="ITFixBot: Автоматизированная ИТ-поддержка">
             ITFixBot: Avtomatlaşdırılmış İT Dəstək
           </h3>
 
           <div class="flex gap-4 mt-4 flex-wrap">
             <span class="text-[9px] uppercase tracking-widest opacity-40"
             data-az="Telegram · AI · Avtomatlaşdırma"
-          data-en="Telegram · AI · Automation">
+            data-en="Telegram · AI · Automation"
+            data-ru="Telegram · ИИ · Автоматизация">
               Telegram · AI · Automation
             </span>
             <span class="text-[9px] uppercase tracking-widest px-2 py-1 bg-white/5 rounded"
             data-az="İstehsal Sistemi"
-            data-en="Production System">>
+            data-en="Production System"
+            data-ru="Production-система">
               Production System
             </span>
           </div>
@@ -482,7 +578,7 @@ mobileLinks.forEach(link => {
     <!-- Document Management -->
     <a href="cases/document-management.html"
        class="blog-item py-12 flex flex-col md:flex-row justify-between items-start md:items-center group relative"
-       data-img="assets/images/document_system.jpg">
+       data-img="assets/images/sened.png">
 
       <div class="flex items-start md:items-center gap-6 md:gap-16">
         <span class="text-sm opacity-20 font-syne">02</span>
@@ -490,19 +586,22 @@ mobileLinks.forEach(link => {
         <div>
           <h3 class="text-2xl md:text-5xl font-syne uppercase transition-all duration-500"
               data-az="Sənəd Dövriyyə Sistemi"
-              data-en="Document Management System">
+              data-en="Document Management System"
+              data-ru="Система документооборота">
             Sənəd Dövriyyə Sistemi
           </h3>
 
           <div class="flex gap-4 mt-4 flex-wrap">
             <span class="text-[9px] uppercase tracking-widest opacity-40"
              data-az="İş Axını · Arxiv · Təhlükəsizlik"
-              data-en="Workflow · Archive · Security">
+              data-en="Workflow · Archive · Security"
+              data-ru="Процессы · Архив · Безопасность">
               Workflow · Archive · Security
             </span>
             <span class="text-[9px] uppercase tracking-widest px-2 py-1 bg-white/5 rounded"
              data-az="Universitet miqyası"
-              data-en="University Scale">
+              data-en="University Scale"
+              data-ru="Масштаб университета">
               University Scale
             </span>
           </div>
@@ -513,7 +612,7 @@ mobileLinks.forEach(link => {
     <!-- HR Attendance -->
     <a href="cases/hr-attendance.html"
        class="blog-item py-12 flex flex-col md:flex-row justify-between items-start md:items-center group relative"
-       data-img="assets/images/hr_attendance.jpg">
+       data-img="assets/images/attendance.png">
 
       <div class="flex items-start md:items-center gap-6 md:gap-16">
         <span class="text-sm opacity-20 font-syne">03</span>
@@ -521,19 +620,22 @@ mobileLinks.forEach(link => {
         <div>
           <h3 class="text-2xl md:text-5xl font-syne uppercase transition-all duration-500"
               data-az="İnsan Resursları şöbəsinin davamiyyəti və giriş nəzarəti"
-              data-en="HR Attendance & Access Control">
+              data-en="HR Attendance & Access Control"
+              data-ru="Учёт рабочего времени и контроль доступа HR">
             HR Attendance & Access Control
           </h3>
 
           <div class="flex gap-4 mt-4 flex-wrap">
             <span class="text-[9px] uppercase tracking-widest opacity-40"
             data-az="Biometrika · Qeydlər · Analitika"
-              data-en="Biometrics · Logs · Analytics">
+              data-en="Biometrics · Logs · Analytics"
+              data-ru="Биометрия · Логи · Аналитика">
               Biometrics · Logs · Analytics
             </span>
             <span class="text-[9px] uppercase tracking-widest px-2 py-1 bg-white/5 rounded"
             data-az="İnfrastruktur təbəqəsi"
-              data-en="Infrastructure Layer">
+              data-en="Infrastructure Layer"
+              data-ru="Инфраструктурный слой">
               Infrastructure Layer
             </span>
           </div>
@@ -541,11 +643,10 @@ mobileLinks.forEach(link => {
       </div>
     </a>
 
-
-    <!-- HR Attendance -->
+    <!-- Central Park Hotel -->
     <a href="cases/hotel.html"
        class="blog-item py-12 flex flex-col md:flex-row justify-between items-start md:items-center group relative"
-       data-img="assets/images/hr_attendance.jpg">
+       data-img="assets/images/Hotel-3.png">
 
       <div class="flex items-start md:items-center gap-6 md:gap-16">
         <span class="text-sm opacity-20 font-syne">04</span>
@@ -553,20 +654,23 @@ mobileLinks.forEach(link => {
         <div>
           <h3 class="text-2xl md:text-5xl font-syne uppercase transition-all duration-500"
               data-az="Central Park Hotel saytı"
-              data-en="Website of Central Park Hotel">
+              data-en="Website of Central Park Hotel"
+              data-ru="Сайт Central Park Hotel">
             Website of Central Park Hotel
           </h3>
 
           <div class="flex gap-4 mt-4 flex-wrap">
             <span class="text-[9px] uppercase tracking-widest opacity-40"
             data-az="Hotel · Qonaq · Turizm"
-              data-en="Hotel · Guest · Tourism">
+              data-en="Hotel · Guest · Tourism"
+              data-ru="Отель · Гость · Туризм">
               Hotel · Guest · Tourism
             </span>
             <span class="text-[9px] uppercase tracking-widest px-2 py-1 bg-white/5 rounded"
             data-az="Turizm Sektoru"
-              data-en="Tourism Industry">
-              Infrastructure Layer
+              data-en="Tourism Industry"
+              data-ru="Индустрия туризма">
+              Tourism Industry
             </span>
           </div>
         </div>
@@ -583,27 +687,27 @@ mobileLinks.forEach(link => {
     <div class="flex flex-col md:flex-row items-center justify-between mb-16 reveal border-b border-white/5 pb-10">
         <div class="flex items-center gap-6">
             <div class="relative">
-                <div class="absolute inset-0 bg-red-600 blur-2xl opacity-10 animate-pulse"></div>
-                <img src="assets/images/azar-ytprofile.jpg" id="yt-channel-img" class="w-20 h-20 md:w-24 md:h-24 rounded-full border border-white/10 relative z-10 object-cover" alt="Bakuvi YouTube">
+                <div class="absolute inset-0 bg-white blur-2xl opacity-10 animate-pulse"></div>
+                <img src="assets/images/azar-ytprofile.jpg" id="yt-channel-img" class="w-20 h-20 md:w-24 md:h-24 rounded-full border border-white/10 relative z-10 object-cover grayscale" alt="Bakuvi YouTube">
             </div>
             <div>
-                <h3 class="text-2xl md:text-4xl font-syne font-bold uppercase tracking-tighter text-white">Bakuvi Design</h3>
+                <h3 class="text-2xl md:text-4xl font-syne font-bold uppercase tracking-tighter text-white">Bakuvi Solutions</h3>
                 <div class="flex items-center gap-3 mt-1">
-                    <span class="flex h-2 w-2 rounded-full bg-red-600 animate-ping"></span>
-                    <p class="text-[10px] uppercase tracking-[0.3em] text-red-600 font-bold">Live IT Hub</p>
+                    <span class="flex h-2 w-2 rounded-full bg-white animate-ping"></span>
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-white/70 font-bold" data-az="Canlı İT Kanal" data-en="Live IT Channel" data-ru="Живой ИТ-канал">Canlı İT Kanal</p>
                 </div>
             </div>
         </div>
         
-        <a href="https://www.youtube.com/@azrdadashev5764" target="_blank" class="mt-8 md:mt-0 flex items-center gap-4 bg-white text-black px-10 py-5 rounded-full font-syne font-bold uppercase text-[10px] tracking-widest hover:bg-red-600 hover:text-white transition-all duration-500 group">
+        <a href="https://www.youtube.com/@azrdadashev5764" target="_blank" class="mt-8 md:mt-0 flex items-center gap-4 bg-white text-black px-10 py-5 rounded-full font-syne font-bold uppercase text-[10px] tracking-widest hover:bg-black hover:text-white border border-transparent hover:border-white transition-all duration-500 group">
             <svg class="w-5 h-5 group-hover:scale-125 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-            Subscribe Now
+            <span data-az="Abunə ol" data-en="Subscribe Now" data-ru="Подписаться">Abunə ol</span>
         </a>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div class="lg:col-span-8 reveal">
-            <div class="video-main-container">
+            <div class="video-main-container tilt-card">
                 <div class="video-wrapper">
                     <iframe id="main-video-frame" 
                         src="" 
@@ -622,7 +726,7 @@ mobileLinks.forEach(link => {
         </div>
 
         <div class="lg:col-span-4 reveal">
-            <h5 class="text-[10px] uppercase tracking-[0.3em] opacity-30 mb-6">Up Next / Latest Videos</h5>
+            <h5 class="text-[10px] uppercase tracking-[0.3em] opacity-30 mb-6" data-az="Növbəti / Son Videolar" data-en="Up Next / Latest Videos" data-ru="Далее / Последние видео">Növbəti / Son Videolar</h5>
             <div id="playlist-container" class="flex flex-col gap-4 overflow-y-auto max-h-[600px] pr-4 custom-scrollbar">
                 </div>
         </div>
@@ -633,32 +737,37 @@ mobileLinks.forEach(link => {
 
        <section class="py-20 px-6 md:px-20 bg-black">
     <div class="mb-12 reveal">
-        <h2 class="text-4xl md:text-6xl font-syne font-bold text-white uppercase leading-none">Anlar & <br><span class="text-zinc-500">Hekayələr</span></h2>
+        <h2 class="text-4xl md:text-6xl font-syne font-bold text-white uppercase leading-none"
+            data-az='Anlar & <br><span class="text-zinc-500">Hekayələr</span>'
+            data-en='Moments & <br><span class="text-zinc-500">Stories</span>'
+            data-ru='Моменты & <br><span class="text-zinc-500">Истории</span>'>
+            Anlar & <br><span class="text-zinc-500">Hekayələr</span>
+        </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[1000px]">
         
-        <div class="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden reveal shadow-2xl clickable-img">
-            <img src="assets/images/IMG_1185.JPG" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Me">
+        <div class="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden reveal shadow-2xl clickable-img tilt-card">
+            <img src="assets/images/IMG_1185.JPG" class="w-full h-full object-cover grayscale transition duration-700 group-hover:scale-110" alt="Me">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
-                <span class="text-white/60 text-sm uppercase tracking-widest mb-2">Portret</span>
+                <span class="text-white/60 text-sm uppercase tracking-widest mb-2" data-az="Portret" data-en="Portrait" data-ru="Портрет">Portret</span>
                 <h4 class="text-white text-3xl font-syne font-bold">Azar Dadashoff</h4>
             </div>
         </div>
 
-        <div class="md:col-span-2 relative group rounded-3xl overflow-hidden reveal shadow-xl clickable-img">
-            <img src="assets/images/IMG_5772.JPG" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Work">
+        <div class="md:col-span-2 relative group rounded-3xl overflow-hidden reveal shadow-xl clickable-img tilt-card">
+            <img src="assets/images/IMG_5772.JPG" class="w-full h-full object-cover grayscale transition duration-700 group-hover:scale-105" alt="Work">
             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl text-center">
-                    <p class="text-white font-medium uppercase tracking-tighter">İş Prosesi</p>
+                    <p class="text-white font-medium uppercase tracking-tighter" data-az="İş Prosesi" data-en="Work Process" data-ru="Рабочий процесс">İş Prosesi</p>
                 </div>
             </div>
         </div>
 
-        <div class="relative group rounded-3xl overflow-hidden reveal shadow-xl clickable-img">
-            <img src="assets/images/photo_2026-01-21_00-28-39.jpg" class="w-full h-full object-cover transition duration-700 group-hover:rotate-2 group-hover:scale-110" alt="Life">
+        <div class="relative group rounded-3xl overflow-hidden reveal shadow-xl clickable-img tilt-card">
+            <img src="assets/images/photo_2026-01-21_00-28-39.jpg" class="w-full h-full object-cover grayscale transition duration-700 group-hover:rotate-2 group-hover:scale-110" alt="Life">
             <div class="absolute inset-0 bg-zinc-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <p class="text-white text-xs font-light italic">Həyatın rəngləri...</p>
+                <p class="text-white text-xs font-light italic" data-az="Həyatın rəngləri..." data-en="Colors of life..." data-ru="Краски жизни...">Həyatın rəngləri...</p>
             </div>
         </div>
 
@@ -667,9 +776,10 @@ mobileLinks.forEach(link => {
                 <i class="fas fa-camera text-white"></i>
             </div>
             <div>
-                <h4 class="text-2xl font-syne font-bold uppercase text-black leading-tight">Minimalist<br>Lifestyle</h4>
+                <h4 class="text-2xl font-syne font-bold uppercase text-black leading-tight"
+                    data-az="Minimalist<br>Yanaşma" data-en="Minimalist<br>Approach" data-ru="Минималистичный<br>Подход">Minimalist<br>Yanaşma</h4>
                 <div class="h-1 w-10 bg-black mt-4 mb-4"></div>
-                <p class="text-zinc-600 text-sm">Hər kadr bir hekayədir, hər detal bir duyğudur.</p>
+                <p class="text-zinc-600 text-sm" data-az="Hər kadr bir hekayədir, hər detal bir duyğudur." data-en="Every frame is a story, every detail a feeling." data-ru="Каждый кадр — история, каждая деталь — чувство.">Hər kadr bir hekayədir, hər detal bir duyğudur.</p>
             </div>
         </div>
 
@@ -683,7 +793,8 @@ mobileLinks.forEach(link => {
 
         <h2 class="text-xs uppercase tracking-[0.5em] mb-16 opacity-50 reveal"
             data-az="Əlaqə / Birlikdə İş"
-            data-en="Contact / Collaboration">
+            data-en="Contact / Collaboration"
+            data-ru="Контакты / Сотрудничество">
             Əlaqə / Birlikdə İş
         </h2>
         
@@ -723,13 +834,15 @@ mobileLinks.forEach(link => {
                     <div class="mb-12">
                         <h3 class="text-4xl md:text-6xl font-syne font-bold uppercase leading-tight mb-4">
                             <span data-az="Layihən üçün"
-                                  data-en="For your">
+                                  data-en="For your"
+                                  data-ru="Для вашего">
                                 Layihən üçün
                             </span>
                             <br>
                             <span class="italic text-transparent outline-text"
                                   data-az="Texniki Həll"
-                                  data-en="Technical Solution">
+                                  data-en="Technical Solution"
+                                  data-ru="Технического решения">
                                 Texniki Həll
                             </span>
                         </h3>
@@ -737,14 +850,14 @@ mobileLinks.forEach(link => {
 
                     <div class="form-row">
                         <div class="input-group">
-                            <label data-az="Ad Soyad" data-en="Full Name">Ad Soyad</label>
+                            <label data-az="Ad Soyad" data-en="Full Name" data-ru="Имя Фамилия">Ad Soyad</label>
                             <input type="text" name="name"
                                    placeholder="Azər Dadaşev"
                                    required>
                         </div>
 
                         <div class="input-group">
-                            <label data-az="E-poçt" data-en="Email Address">E-poçt</label>
+                            <label data-az="E-poçt" data-en="Email Address" data-ru="Эл. почта">E-poçt</label>
                             <input type="email" name="email"
                                    placeholder="name@example.com"
                                    required>
@@ -753,47 +866,53 @@ mobileLinks.forEach(link => {
                     
                     <div class="form-row">
                         <div class="input-group">
-                            <label data-az="Əlaqə nömrəsi" data-en="Phone Number">Əlaqə nömrəsi</label>
+                            <label data-az="Əlaqə nömrəsi" data-en="Phone Number" data-ru="Номер телефона">Əlaqə nömrəsi</label>
                             <input type="tel" name="phone"
                                    placeholder="+994 77 000 00 00">
                         </div>
 
                         <div class="input-group">
-                            <label data-az="Xidmət növü" data-en="Service Type">Xidmət növü</label>
+                            <label data-az="Xidmət növü" data-en="Service Type" data-ru="Тип услуги">Xidmət növü</label>
                             <select name="need" class="dropdown-premium">
                                 <option value="" disabled selected
                                         data-az="Seçim edin"
-                                        data-en="Select a service">
+                                        data-en="Select a service"
+                                        data-ru="Выберите услугу">
                                     Seçim edin
                                 </option>
 
                                 <option value="it-infrastructure"
                                         data-az="İT İnfrastruktur & Sistemlər"
-                                        data-en="IT Infrastructure & Systems">
+                                        data-en="IT Infrastructure & Systems"
+                                        data-ru="ИТ-инфраструктура и системы">
                                     İT İnfrastruktur & Sistemlər
                                 </option>
 
                                 <option value="web-development"
                                         data-az="Veb Sayt & Proqram Təminatı"
-                                        data-en="Web & Software Development">
+                                        data-en="Web & Software Development"
+                                        data-ru="Веб-сайты и разработка ПО">
                                     Veb Sayt & Proqram Təminatı
                                 </option>
 
                                 <option value="business-analysis"
                                         data-az="Biznes Analizi & Konsaltinq"
-                                        data-en="Business Analysis & Consulting">
+                                        data-en="Business Analysis & Consulting"
+                                        data-ru="Бизнес-анализ и консалтинг">
                                     Biznes Analizi & Konsaltinq
                                 </option>
 
                                 <option value="security-systems"
                                         data-az="Təhlükəsizlik Sistemləri (CCTV, Turniket)"
-                                        data-en="Security Systems (CCTV, Access Control)">
+                                        data-en="Security Systems (CCTV, Access Control)"
+                                        data-ru="Системы безопасности (CCTV, турникеты)">
                                     Təhlükəsizlik Sistemləri
                                 </option>
 
                                 <option value="documentation"
                                         data-az="Texniki Dokumentasiya"
-                                        data-en="Technical Documentation">
+                                        data-en="Technical Documentation"
+                                        data-ru="Техническая документация">
                                     Texniki Dokumentasiya
                                 </option>
                             </select>
@@ -801,7 +920,7 @@ mobileLinks.forEach(link => {
                     </div>
 
                     <div class="input-group">
-                        <label data-az="Layihə haqqında" data-en="Project Details">
+                        <label data-az="Layihə haqqında" data-en="Project Details" data-ru="О проекте">
                             Layihə haqqında
                         </label>
                         <textarea name="message" rows="4"
@@ -811,7 +930,8 @@ mobileLinks.forEach(link => {
 
                     <button type="submit" class="premium-btn" id="submit-btn">
                         <span data-az="Mesaj göndər"
-                              data-en="Send Message">
+                              data-en="Send Message"
+                              data-ru="Отправить сообщение">
                             Mesaj göndər
                         </span>
                         <div class="arrow-wrap">
@@ -845,13 +965,19 @@ mobileLinks.forEach(link => {
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             
             <div class="flex flex-col gap-4">
-                <h4 class="text-xl font-syne font-bold uppercase tracking-tighter">
-                    Bakuvi.Studio
+                <h4 class="text-xl font-syne font-bold uppercase tracking-tighter flex items-center gap-3">
+                    <svg class="bakuvi-mark" style="width:24px;height:24px;" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M46 26 L46 94"/>
+                        <path d="M46 26 H70 C82 26 82 46 70 48 H46"/>
+                        <path d="M46 48 H74 C87 48 87 70 74 70 H46"/>
+                    </svg>
+                    Bakuvi Solutions
                 </h4>
                 <p class="text-[10px] tracking-[0.2em] uppercase opacity-40 max-w-[220px]"
-                   data-az="Dizayn estetikadan daha artıqdır — o, sistemli düşüncə və həll yoludur."
-                   data-en="Design is more than aesthetics — it is structured thinking and problem-solving.">
-                    Dizayn estetikadan daha artıqdır — o, sistemli düşüncə və həll yoludur.
+                   data-az="Xaosdan sistem qururam — texnologiya sadəcə alət deyil, düşüncə tərzidir."
+                   data-en="I build systems from chaos — technology isn't just a tool, it's a way of thinking."
+                   data-ru="Строю системы из хаоса — технология это не просто инструмент, а образ мышления.">
+                    Xaosdan sistem qururam — texnologiya sadəcə alət deyil, düşüncə tərzidir.
                 </p>
             </div>
 
@@ -860,7 +986,8 @@ mobileLinks.forEach(link => {
                 <div class="flex flex-col gap-2">
                     <span class="text-[8px] uppercase tracking-[0.3em] opacity-30"
                           data-az="Telefon"
-                          data-en="Phone">
+                          data-en="Phone"
+                          data-ru="Телефон">
                         Telefon
                     </span>
                     <a href="tel:+994775880724" class="footer-link text-xs tracking-widest">
@@ -871,7 +998,8 @@ mobileLinks.forEach(link => {
                 <div class="flex flex-col gap-2">
                     <span class="text-[8px] uppercase tracking-[0.3em] opacity-30"
                           data-az="E-poçt"
-                          data-en="Email">
+                          data-en="Email"
+                          data-ru="Эл. почта">
                         E-poçt
                     </span>
                     <a href="mailto:dadasevazer@gmail.com"
@@ -886,9 +1014,10 @@ mobileLinks.forEach(link => {
         <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
             
             <div class="text-[9px] tracking-[0.3em] uppercase opacity-40"
-                 data-az="© 2026 Azər Bakuvi. Bütün hüquqlar qorunur."
-                 data-en="© 2026 Azar Bakuvi. All rights reserved.">
-                © 2026 Azər Bakuvi. Bütün hüquqlar qorunur.
+                 data-az="© 2026 Bakuvi Solutions MMC — Azər Dadaşev. Bütün hüquqlar qorunur."
+                 data-en="© 2026 Bakuvi Solutions LLC — Azar Dadashev. All rights reserved."
+                 data-ru="© 2026 Bakuvi Solutions — Азер Дадашев. Все права защищены.">
+                © 2026 Bakuvi Solutions MMC — Azər Dadaşev. Bütün hüquqlar qorunur.
             </div>
             
             <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
@@ -896,7 +1025,8 @@ mobileLinks.forEach(link => {
                 
                 <span class="text-[9px] tracking-[0.3em] uppercase opacity-40 group-hover:opacity-100 transition"
                       data-az="Yuxarı qayıt"
-                      data-en="Back to top">
+                      data-en="Back to top"
+                      data-ru="Наверх">
                     Yuxarı qayıt
                 </span>
 

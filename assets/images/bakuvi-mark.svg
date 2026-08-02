@@ -1,0 +1,18 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Baku skyline echo, subtle -->
+  <g opacity="0.35" fill="currentColor">
+    <rect x="14" y="66" width="7" height="26" rx="1"/>
+    <rect x="24" y="52" width="7" height="40" rx="1"/>
+    <rect x="34" y="60" width="7" height="32" rx="1"/>
+  </g>
+  <!-- Geometric B monogram, built from open circuit strokes -->
+  <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M46 26 L46 94"/>
+    <path d="M46 26 H70 C82 26 82 46 70 48 H46"/>
+    <path d="M46 48 H74 C87 48 87 70 74 70 H46"/>
+  </g>
+  <!-- circuit node -->
+  <circle cx="70" cy="48" r="4.5" fill="currentColor"/>
+  <circle cx="98" cy="20" r="3" fill="currentColor" opacity="0.6"/>
+  <path d="M74 24 L92 20" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+</svg>
